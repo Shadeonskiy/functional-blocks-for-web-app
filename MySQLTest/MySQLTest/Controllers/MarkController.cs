@@ -27,12 +27,23 @@ namespace MySQLTest.Controllers
                     Mark mark = new Mark();
                     mark.Id = Convert.ToInt32(reader["id"]);
                     mark.Type = Convert.ToString(reader["type"]);
-                    mark.TaskDate = Convert.ToString(reader["task_date"]);
+                    mark.TaskDate = Convert.ToDateTime(reader["task_date"]);
                     mark.Name = Convert.ToString(reader["name"]);
                     mark.Grade = Convert.ToInt32(reader["grade"]);
                     mark.Teacher = Convert.ToString(reader["teacher"]);
-                    mark.EvaluationDate = Convert.ToString(reader["evaluation_date"]);
-                    mark.Status = Convert.ToString(reader["status"]);
+                    mark.EvaluationDate = Convert.ToDateTime(reader["evaluation_date"]);
+                    switch (reader["status"])
+                    {
+                        case "graded":
+                            mark.Status = status.graded;
+                            break;
+                        case "not graded":
+                            mark.Status = status.not_graded;
+                            break;
+                        case "amogus":
+                            mark.Status = status.amogus;
+                            break;
+                    }
                     marks.Add(mark);
                 }
                 reader.Close();

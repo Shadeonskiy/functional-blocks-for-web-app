@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "E0BqvQcHBdWQrm04CmMVPwQUX4Ssn8k5btraiETdKAPEiSY5+jvy2Ve8w0b5KcNweUY4modJV3YSGOt/jkXLzw==",
+  "dgSpecHash": "zU1Lms3n7/V+qIEkh5kDq+QFrstl2SHZRtVZAgDE06x3Db9CfA9+sCtmxIFZ4XLJQ5y06/QifKNX7lJg7ouV3Q==",
   "success": true,
-  "projectFilePath": "D:\\KnuStudyWeb\\functional-blocks-for-web-app\\MySQLTest\\MySQLTest\\MySQLTest.csproj",
+  "projectFilePath": "C:\\Users\\Влад\\Desktop\\functional-blocks-for-web-app\\MySQLTest\\MySQLTest\\MySQLTest.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\radin\\.nuget\\packages\\mysqlconnector\\2.1.12\\mysqlconnector.2.1.12.nupkg.sha512"
+    "C:\\Users\\Влад\\.nuget\\packages\\mysqlconnector\\2.1.12\\mysqlconnector.2.1.12.nupkg.sha512"
   ],
   "logs": []
 }

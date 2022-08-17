@@ -1,37 +1,45 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-@model List<User>
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>UserId</th>
-            <th>FirstName</th>
-            <th>LastName</th>
-            <th>MiddleName</th>
-            <th>Specialty</th>
-            <th>Course</th>
-            <th>Group</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach(var item in Model)
-        {
-            <tr>
-                <td>@item.Id</td>
-                <td>@item.UserId</td>
-                <td>@item.FirstName</td>
-                <td>@item.LastName</td>
-                <td>@item.MiddleName</td>
-                <td>@item.Specialty</td>
-                <td>@item.Course</td>
-                <td>@item.Group</td>
-            </tr>
-        }
-    </tbody>
-</table>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="~/css/header.css">
+        <link rel="stylesheet" href="~/css/main.css">
+        <link rel="stylesheet" href="~/css/footer.css">
+        <link rel="stylesheet" href="~/css/style.css">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/MySQLTest.styles.css" asp-append-version="true" />
+        <title>Home page</title> 
+    </head>
+    <body>
+<!-- Main -->
+        <main>
+            <div class="main__mail-container borders-margin">
+                <h2>Client Messages</h2>
+                <ul class = "main__mail">
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, blanditiis expedita fugit officiis quasi, rem commodi aut ad, voluptatem dolore corporis. Maiores ex iusto consequatur nisi aut ducimus ut vero.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, blanditiis expedita fugit officiis quasi, rem commodi aut ad, voluptatem dolore corporis. Maiores ex iusto consequatur nisi aut ducimus ut vero.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, blanditiis expedita fugit officiis quasi, rem commodi aut ad, voluptatem dolore corporis. Maiores ex iusto consequatur nisi aut ducimus ut vero.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, blanditiis expedita fugit officiis quasi, rem commodi aut ad, voluptatem dolore corporis. Maiores ex iusto consequatur nisi aut ducimus ut vero.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, blanditiis expedita fugit officiis quasi, rem commodi aut ad, voluptatem dolore corporis. Maiores ex iusto consequatur nisi aut ducimus ut vero.</li>
+                </ul>
+            </div>
+
+            <div class="main__task-bar__container borders-margin">
+                <div class="main__task-bar__row set-center">
+                    <div class="main__task-bar__item"></div>
+                    <div class="main__task-bar__item"></div>
+                </div>
+                <div class="main__task-bar__row set-center">
+                    <div class="main__task-bar__item"></div>
+                    <div class="main__task-bar__item"></div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

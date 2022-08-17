@@ -16,75 +16,51 @@
     <link rel="stylesheet" href="~/css/style.css">
 </head>
 <body>
-    <!--<header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MySQLTest</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Mark" asp-action="Mark">Marks</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>-->
     <header>
         <div class="header__row borders-margin">
             <div class="logo back-image"></div>
             <nav>
                 <ul>
                     <li>
-                        <div class = "header__menu-element pointer" onclick="window.location.href = 'index.html'">
-                            <div class = "back-image header__icon" style = "background-image: url(./media/home.png);"></div>
+                        <a class = "header__menu-element pointer" asp-area="" asp-controller="Home" asp-action="Index">
+                            <div class = "back-image header__icon" style = "background-image: url(../media/home.png);"></div>
                             <span>Main</span>
-                        </div>
+                        </a>
                     </li>
                     <li>
-                        <div class = "header__menu-element pointer" onclick="window.location.href = 'task.html'">
-                            <div class = "back-image header__icon" style = "background-image: url(./media/task.png);"></div>
+                        <a class = "header__menu-element pointer" asp-area="" asp-controller="Mark" asp-action="Mark">
+                            <div class = "back-image header__icon" style = "background-image: url(../media/task.png);"></div>
                             <span>Tasks</span>
-                        </div>
+                        </a>
                     </li>
                     <li>
-                        <div class = "header__menu-element pointer">
-                            <div class = "back-image header__icon" style = "background-image: url(./media/book-of-black-cover-closed.png);"></div>
+                        <a class = "header__menu-element pointer" asp-area="" asp-controller="Mark" asp-action="Mark">
+                            <div class = "back-image header__icon" style = "background-image: url(../media/book-of-black-cover-closed.png);"></div>
                             <span>Materials</span>
-                        </div>
+                        </a>
                     </li>
                     <li>
-                        <div class = "header__menu-element pointer">
-                            <div class = "back-image header__icon" style = "background-image: url(./media/information-button.png);"></div>
+                        <a class = "header__menu-element pointer" asp-area="" asp-controller="Mark" asp-action="Mark">
+                            <div class = "back-image header__icon" style = "background-image: url(../media/information-button.png);"></div>
                             <span>FAQ</span>
-                        </div>
+                        </a>
                     </li>
                     <li>
-                        <div class = "header__menu-element pointer">
-                            <div class = "back-image header__icon" style = "background-image: url(./media/a-plus-test-result-of-school.png);"></div>
-                            <a class = "text-dark" asp-area="" asp-controller="Mark" asp-action="Mark">My marks</a>
-                        </div>
+                        <a class = "header__menu-element pointer" asp-area="" asp-controller="Mark" asp-action="Mark">
+                            <div class = "back-image header__icon" style = "background-image: url(../media/a-plus-test-result-of-school.png);"></div>
+                            <span>My marks</span>
+                        </a>
                     </li>
                 </ul>
             </nav>
             <div class="header__account set-center">
                 <div class = "header__menu-element">
-                    <div class = "back-image account-icon pointer" style = "background-image: url(./media/ukraine.png);"></div>
-                    <div class = "back-image account-icon pointer" style = "background-image: url(./media/dark-mode.png);"></div>
+                    <div class = "back-image account-icon pointer" style = "background-image: url(../media/ukraine.png);"></div>
+                    <div class = "back-image account-icon pointer" style = "background-image: url(../media/dark-mode.png);"></div>
                 </div>
                 <div class="header__account-user">
                     <div class = "header__account-image">
-                        <img src="./media/user.png" alt="Avatar">
+                        <img src="../media/user.png" alt="Avatar">
                     </div>
                     <div class = "header__account-row">
                         <div class="header__account-row" align = "right">Владислав Л.В</div>
