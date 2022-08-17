@@ -4,12 +4,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - MySQLTest</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MySQLTest.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/header.css">
+    <link rel="stylesheet" href="~/css/mark.css">
+    <link rel="stylesheet" href="~/css/footer.css">
+    <link rel="stylesheet" href="~/css/style.css">
 </head>
 <body>
-    <header>
+    <!--<header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MySQLTest</a>
@@ -32,6 +39,60 @@
                 </div>
             </div>
         </nav>
+    </header>-->
+    <header>
+        <div class="header__row borders-margin">
+            <div class="logo back-image"></div>
+            <nav>
+                <ul>
+                    <li>
+                        <div class = "header__menu-element pointer" onclick="window.location.href = 'index.html'">
+                            <div class = "back-image header__icon" style = "background-image: url(./media/home.png);"></div>
+                            <span>Main</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class = "header__menu-element pointer" onclick="window.location.href = 'task.html'">
+                            <div class = "back-image header__icon" style = "background-image: url(./media/task.png);"></div>
+                            <span>Tasks</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class = "header__menu-element pointer">
+                            <div class = "back-image header__icon" style = "background-image: url(./media/book-of-black-cover-closed.png);"></div>
+                            <span>Materials</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class = "header__menu-element pointer">
+                            <div class = "back-image header__icon" style = "background-image: url(./media/information-button.png);"></div>
+                            <span>FAQ</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class = "header__menu-element pointer">
+                            <div class = "back-image header__icon" style = "background-image: url(./media/a-plus-test-result-of-school.png);"></div>
+                            <a class = "text-dark" asp-area="" asp-controller="Mark" asp-action="Mark">My marks</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__account set-center">
+                <div class = "header__menu-element">
+                    <div class = "back-image account-icon pointer" style = "background-image: url(./media/ukraine.png);"></div>
+                    <div class = "back-image account-icon pointer" style = "background-image: url(./media/dark-mode.png);"></div>
+                </div>
+                <div class="header__account-user">
+                    <div class = "header__account-image">
+                        <img src="./media/user.png" alt="Avatar">
+                    </div>
+                    <div class = "header__account-row">
+                        <div class="header__account-row" align = "right">Владислав Л.В</div>
+                        <div class="header__account-row" align = "right"> <span class = "pointer logout-link">Logout</span> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -39,14 +100,15 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - MySQLTest - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer>
+        <div class="footer__row">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, excepturi!
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>

@@ -9,4 +9,6 @@ footer {
     color: #fff;
     height: 100%;
     align-items: center;
+    /*position: absolute;
+    bottom: 0;*/
 }

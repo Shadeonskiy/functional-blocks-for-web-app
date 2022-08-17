@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -8,6 +8,16 @@
 
   <ItemGroup>
     <None Include="Views\Mark\Mark.cshtml" />
+    <None Include="wwwroot\media\.DS_Store" />
+    <None Include="wwwroot\media\a-plus-test-result-of-school.png" />
+    <None Include="wwwroot\media\book-of-black-cover-closed.png" />
+    <None Include="wwwroot\media\dark-mode.png" />
+    <None Include="wwwroot\media\home.png" />
+    <None Include="wwwroot\media\information-button.png" />
+    <None Include="wwwroot\media\logo.jpg" />
+    <None Include="wwwroot\media\task.png" />
+    <None Include="wwwroot\media\ukraine.png" />
+    <None Include="wwwroot\media\user.png" />
   </ItemGroup>
 
   <ItemGroup>
