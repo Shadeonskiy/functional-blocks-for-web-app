@@ -1,0 +1,31 @@
+.task__container-row { 
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.task__element{
+    width: 250px;
+    height: 170px;
+    margin: 10px 10px;
+    border-radius: 30px;
+    background-color: red;
+}
+.headline {
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+.task__main-filter {
+    margin: 50px 0px;
+}
+.task__main-headline-container {
+    width: 40%;
+}
+.task__main-filter-container {
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+}
+.task__main-filter-container > div {
+    margin : 0px 20px;
+}

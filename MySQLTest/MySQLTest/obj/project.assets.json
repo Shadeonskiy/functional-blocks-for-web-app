@@ -50,19 +50,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Влад\\.nuget\\packages\\": {}
+    "C:\\Users\\radin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\КНУ\\ASP.NET\\MySQLTest\\MySQLTest\\MySQLTest.csproj",
+      "projectUniqueName": "D:\\KnuStudyWeb\\functional-blocks-for-web-app\\MySQLTest\\MySQLTest\\MySQLTest.csproj",
       "projectName": "MySQLTest",
-      "projectPath": "F:\\КНУ\\ASP.NET\\MySQLTest\\MySQLTest\\MySQLTest.csproj",
-      "packagesPath": "C:\\Users\\Влад\\.nuget\\packages\\",
-      "outputPath": "F:\\КНУ\\ASP.NET\\MySQLTest\\MySQLTest\\obj\\",
+      "projectPath": "D:\\KnuStudyWeb\\functional-blocks-for-web-app\\MySQLTest\\MySQLTest\\MySQLTest.csproj",
+      "packagesPath": "C:\\Users\\radin\\.nuget\\packages\\",
+      "outputPath": "D:\\KnuStudyWeb\\functional-blocks-for-web-app\\MySQLTest\\MySQLTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "D:\\NuGet\\NuGet.Config",
+        "C:\\Users\\radin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -111,7 +111,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+@model List<Mark>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/header.css">
+    <link rel="stylesheet" href="~/css/mark.css">
+    <link rel="stylesheet" href="~/css/footer.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <title>My marks</title> 
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header__row borders-margin">
+            <div class="logo back-image"></div>
+            <nav>
+                <ul>
+                    <li>
+                        <div class = "header__menu-element pointer" onclick="window.location.href = 'index.html'">
+                            <div class = "back-image header__icon" style = "background-image: url(./media/home.png);"></div>
+                            <span>Main</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class = "header__menu-element pointer" onclick="window.location.href = 'task.html'">
+                            <div class = "back-image header__icon" style = "background-image: url(./media/task.png);"></div>
+                            <span>Tasks</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class = "header__menu-element pointer">
+                            <div class = "back-image header__icon" style = "background-image: url(./media/book-of-black-cover-closed.png);"></div>
+                            <span>Materials</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class = "header__menu-element pointer">
+                            <div class = "back-image header__icon" style = "background-image: url(./media/information-button.png);"></div>
+                            <span>FAQ</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class = "header__menu-element pointer" onclick="window.location.href = 'mark.html'">
+                            <div class = "back-image header__icon" style = "background-image: url(./media/a-plus-test-result-of-school.png);"></div>
+                            <span>My marks</span>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__account set-center">
+                <div class = "header__menu-element">
+                    <div class = "back-image account-icon pointer" style = "background-image: url(./media/ukraine.png);"></div>
+                    <div class = "back-image account-icon pointer" style = "background-image: url(./media/dark-mode.png);"></div>
+                </div>
+                <div class="header__account-user">
+                    <div class = "header__account-image">
+                        <img src="media/user.png" alt="Avatar">
+                    </div>
+                    <div class = "header__account-row">
+                        <div class="header__account-row" align = "right">Владислав Л.В</div>
+                        <div class="header__account-row" align = "right"> <span class = "pointer logout-link">Logout</span> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <div class="mark__main borders-margin">
+            <div class="mark__main-filter set-center">
+                <div class = "mark__main-headline-container" >
+                    <h2 class = "headline">Welcome to "Tasks"</h2>
+                </div>
+
+                <div class = "mark__main-filter-container" >
+                    <div class="mark__filter-selected">selected</div>
+                    <div class="mark__filter-sort">sort</div>
+                    <div class="mark__filter-filter">filter</div>
+                    <div class="mark__filter-cardshow">show like cards</div>
+                    <div class="mark__filter-rowshow"> show like row</div>
+                    <div class="mark__filter-search"> search for...</div>
+                </div>
+            </div>
+
+            <div class="mark__main-list">
+                <div class="mark__list-row mark__list-namer">
+                    <div class="mark__list-type">Type</div>
+                    <div class="mark__list-date">Task Date</div>
+                    <div class="mark__list-name">Name</div>
+                    <div class="mark__list-mark">Mark</div>
+                    <div class="mark__list-teacher">Teacher</div>
+                    <div class="mark__list-date-evaluate">Evaluation Date</div>
+                    <div class="mark__list-status">Status</div>
+                </div>
+                @foreach(var item in Model)
+                {
+                    <div class="mark__list-row">
+                    <div class="mark__list-type">@item.Type</div>
+                    <div class="mark__list-date">@item.TaskDate</div>
+                    <div class="mark__list-name">@item.Name</div>
+                    <div class="mark__list-mark">@item.Grade</div>
+                    <div class="mark__list-teacher">@item.Teacher</div>
+                    <div class="mark__list-date-evaluate">@item.EvaluationDate</div>
+                    <div class="mark__list-status evaluating">@item.Status</div>
+                    </div>
+                }
+                <!-- <div class="mark__list-row">
+                    <div class="mark__list-type">Lab work</div>
+                    <div class="mark__list-date">Feb 24th of 2022</div>
+                    <div class="mark__list-name">Lab work #1</div>
+                    <div class="mark__list-mark">0 / 100</div>
+                    <div class="mark__list-teacher">Tetyana K.</div>
+                    <div class="mark__list-date-evaluate">Mar 1st of 2022</div>
+                    <div class="mark__list-status evaluating">Evaluating...</div>
+                </div>
+
+                <div class="mark__list-row">
+                    <div class="mark__list-type">Lab work</div>
+                    <div class="mark__list-date">Feb 24th of 2022</div>
+                    <div class="mark__list-name">Lab work #1</div>
+                    <div class="mark__list-mark">67 / 100</div>
+                    <div class="mark__list-teacher">Tetyana K.</div>
+                    <div class="mark__list-date-evaluate">Mar 1st of 2022</div>
+                    <div class="mark__list-status completed">Completed</div>
+                </div>
+
+                <div class="mark__list-row">
+                    <div class="mark__list-type">Lab work</div>
+                    <div class="mark__list-date">Feb 24th of 2022</div>
+                    <div class="mark__list-name">Lab work #1</div>
+                    <div class="mark__list-mark">0 / 100</div>
+                    <div class="mark__list-teacher">Tetyana K.</div>
+                    <div class="mark__list-date-evaluate">Mar 1st of 2022</div>
+                    <div class="mark__list-status failed">Failed</div>
+                </div>
+
+                <div class="mark__list-row">
+                    <div class="mark__list-type">Lab work</div>
+                    <div class="mark__list-date">Feb 24th of 2022</div>
+                    <div class="mark__list-name">Lab work #1</div>
+                    <div class="mark__list-mark">0 / 100</div>
+                    <div class="mark__list-teacher">Tetyana K.</div>
+                    <div class="mark__list-date-evaluate">Mar 1st of 2022</div>
+                    <div class="mark__list-status evaluating">Evaluating...</div>
+                </div>
+
+                <div class="mark__list-row">
+                    <div class="mark__list-type">Lab work</div>
+                    <div class="mark__list-date">Feb 24th of 2022</div>
+                    <div class="mark__list-name">Lab work #1</div>
+                    <div class="mark__list-mark">67 / 100</div>
+                    <div class="mark__list-teacher">Tetyana K.</div>
+                    <div class="mark__list-date-evaluate">Mar 1st of 2022</div>
+                    <div class="mark__list-status completed">Completed</div>
+                </div>
+
+                <div class="mark__list-row">
+                    <div class="mark__list-type">Lab work</div>
+                    <div class="mark__list-date">Feb 24th of 2022</div>
+                    <div class="mark__list-name">Lab work #1</div>
+                    <div class="mark__list-mark">0 / 100</div>
+                    <div class="mark__list-teacher">Tetyana K.</div>
+                    <div class="mark__list-date-evaluate">Mar 1st of 2022</div>
+                    <div class="mark__list-status failed">Failed</div>
+                </div>
+
+                <div class="mark__list-row">
+                    <div class="mark__list-type">Lab work</div>
+                    <div class="mark__list-date">Feb 24th of 2022</div>
+                    <div class="mark__list-name">Lab work #1</div>
+                    <div class="mark__list-mark">0 / 100</div>
+                    <div class="mark__list-teacher">Tetyana K.</div>
+                    <div class="mark__list-date-evaluate">Mar 1st of 2022</div>
+                    <div class="mark__list-status evaluating">Evaluating...</div>
+                </div>
+
+                <div class="mark__list-row">
+                    <div class="mark__list-type">Lab work</div>
+                    <div class="mark__list-date">Feb 24th of 2022</div>
+                    <div class="mark__list-name">Lab work #1</div>
+                    <div class="mark__list-mark">67 / 100</div>
+                    <div class="mark__list-teacher">Tetyana K.</div>
+                    <div class="mark__list-date-evaluate">Mar 1st of 2022</div>
+                    <div class="mark__list-status completed">Completed</div>
+                </div>
+
+                <div class="mark__list-row">
+                    <div class="mark__list-type">Lab work</div>
+                    <div class="mark__list-date">Feb 24th of 2022</div>
+                    <div class="mark__list-name">Lab work #1</div>
+                    <div class="mark__list-mark">0 / 100</div>
+                    <div class="mark__list-teacher">Tetyana K.</div>
+                    <div class="mark__list-date-evaluate">Mar 1st of 2022</div>
+                    <div class="mark__list-status failed">Failed</div>
+                </div>
+                -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer__row">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, excepturi!
+        </div>
+    </footer>
+</body>
+</html>

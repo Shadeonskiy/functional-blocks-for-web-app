@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Views\Mark\Mark.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MySqlConnector" Version="2.1.12" />
   </ItemGroup>
 
