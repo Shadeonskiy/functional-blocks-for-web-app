@@ -1,59 +1,42 @@
-<!DOCTYPE html>
 @model List<Mark>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="~/css/header.css">
-    <link rel="stylesheet" href="~/css/mark.css">
-    <link rel="stylesheet" href="~/css/footer.css">
-    <link rel="stylesheet" href="~/css/style.css">
-    <title>My marks</title> 
-</head>
-<body>
     <!-- Main -->
-    <main>
-        <div class="mark__main borders-margin">
-            <div class="mark__main-filter set-center">
-                <div class = "mark__main-headline-container" >
-                    <h2 class = "headline">Welcome to "Tasks"</h2>
-                </div>
-
-                <div class = "mark__main-filter-container" >
-                    <div class="mark__filter-selected">selected</div>
-                    <div class="mark__filter-sort">sort</div>
-                    <div class="mark__filter-filter">filter</div>
-                    <div class="mark__filter-cardshow">show like cards</div>
-                    <div class="mark__filter-rowshow"> show like row</div>
-                    <div class="mark__filter-search"> search for...</div>
-                </div>
-            </div>
-
-            <div class="mark__main-list">
-                <div class="mark__list-row mark__list-namer">
-                    <div class="mark__list-type">Type</div>
-                    <div class="mark__list-date">Task Date</div>
-                    <div class="mark__list-name">Name</div>
-                    <div class="mark__list-mark">Mark</div>
-                    <div class="mark__list-teacher">Teacher</div>
-                    <div class="mark__list-date-evaluate">Evaluation Date</div>
-                    <div class="mark__list-status">Status</div>
-                </div>
-                @foreach(var item in Model)
-                {
-                    <div class="mark__list-row">
-                        <div class="mark__list-type">@item.Type</div>
-                        <div class="mark__list-date">@item.TaskDate</div>
-                        <div class="mark__list-name">@item.Name</div>
-                        <div class="mark__list-mark">@item.Grade</div>
-                        <div class="mark__list-teacher">@item.Teacher</div>
-                        <div class="mark__list-date-evaluate">@item.EvaluationDate</div>
-                        <div class="mark__list-status evaluating">@item.Status</div>
-                    </div>
-                }
-            </div>
+<div class="mark__main borders-margin">
+    <div class="mark__main-filter set-center">
+        <div class = "mark__main-headline-container" >
+            <h2 class = "headline">Welcome to "Tasks"</h2>
         </div>
-    </main>
-</body>
-</html>
+
+        <div class = "mark__main-filter-container" >
+            <div class="mark__filter-selected">selected</div>
+            <div class="mark__filter-sort">sort</div>
+            <div class="mark__filter-filter">filter</div>
+            <div class="mark__filter-cardshow">show like cards</div>
+            <div class="mark__filter-rowshow"> show like row</div>
+            <div class="mark__filter-search"> search for...</div>
+        </div>
+    </div>
+
+    <div class="mark__main-list">
+        <div class="mark__list-row mark__list-namer">
+            <div class="mark__list-type">Type</div>
+            <div class="mark__list-date">Task Date</div>
+            <div class="mark__list-name">Name</div>
+            <div class="mark__list-mark">Mark</div>
+            <div class="mark__list-teacher">Teacher</div>
+            <div class="mark__list-date-evaluate">Evaluation Date</div>
+            <div class="mark__list-status">Status</div>
+        </div>
+        @foreach(var item in Model)
+        {
+            <div class="mark__list-row">
+                <div class="mark__list-type">@item.Type</div>
+                <div class="mark__list-date">@item.TaskDate</div>
+                <div class="mark__list-name">@item.Name</div>
+                <div class="mark__list-mark">@item.Grade</div>
+                <div class="mark__list-teacher">@item.Teacher</div>
+                <div class="mark__list-date-evaluate">@item.EvaluationDate</div>
+                <div class="mark__list-status evaluating">@item.Status</div>
+            </div>
+        }
+    </div>
+    </div>

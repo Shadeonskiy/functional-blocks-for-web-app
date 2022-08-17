@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MySQLTest.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/header.css">
-    <link rel="stylesheet" href="~/css/mark.css">
-    <link rel="stylesheet" href="~/css/footer.css">
-    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/header.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/main.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/mark.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/footer.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
 </head>
 <body>
     <header>
@@ -71,9 +72,9 @@
         </div>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
+        <section role="main" class="pb-3">
             @RenderBody()
-        </main>
+        </section>
     </div>
 
     <footer>
