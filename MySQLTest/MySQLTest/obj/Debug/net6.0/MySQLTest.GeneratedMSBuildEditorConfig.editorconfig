@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Влад\Desktop\functional-blocks-for-web-app\MySQLTest\MySQLTest
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Влад/Desktop/functional-blocks-for-web-app/MySQLTest/MySQLTest/Views/Assignment/Assignment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzaWdubWVudFxBc3NpZ25tZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Влад/Desktop/functional-blocks-for-web-app/MySQLTest/MySQLTest/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

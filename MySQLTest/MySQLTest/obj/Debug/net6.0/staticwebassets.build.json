@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JRSJHOnZU93fKK4Z5pqdSOfw9w6mPq6KnA1UvBhUvcU=",
+  "Hash": "twq5tjiTlThzoLiJwmWX4JMs2wWr/9fMqO53l723h0U=",
   "Source": "MySQLTest",
   "BasePath": "_content/MySQLTest",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Влад\\Desktop\\functional-blocks-for-web-app\\MySQLTest\\MySQLTest\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\MySQLTest.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Влад\\Desktop\\functional-blocks-for-web-app\\MySQLTest\\MySQLTest\\wwwroot\\css\\calendar.css",
+      "SourceId": "MySQLTest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Влад\\Desktop\\functional-blocks-for-web-app\\MySQLTest\\MySQLTest\\wwwroot\\",
+      "BasePath": "_content/MySQLTest",
+      "RelativePath": "css/calendar.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\calendar.css"
     },
     {
       "Identity": "C:\\Users\\Влад\\Desktop\\functional-blocks-for-web-app\\MySQLTest\\MySQLTest\\wwwroot\\css\\footer.css",
@@ -185,6 +202,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Влад\\Desktop\\functional-blocks-for-web-app\\MySQLTest\\MySQLTest\\wwwroot\\js\\script.js",
+      "SourceId": "MySQLTest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Влад\\Desktop\\functional-blocks-for-web-app\\MySQLTest\\MySQLTest\\wwwroot\\",
+      "BasePath": "_content/MySQLTest",
+      "RelativePath": "js/script.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\script.js"
     },
     {
       "Identity": "C:\\Users\\Влад\\Desktop\\functional-blocks-for-web-app\\MySQLTest\\MySQLTest\\wwwroot\\js\\site.js",
