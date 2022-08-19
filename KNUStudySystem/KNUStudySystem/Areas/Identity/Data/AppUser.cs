@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Identity;
 namespace KNUStudySystem.Areas.Identity.Data
 {
     // Add profile data for application users by adding properties to the Student class
-    public class Student : IdentityUser
+    public class AppUser : IdentityUser
     {
         [PersonalData]
         [Column(TypeName = "nvarchar(100)")]

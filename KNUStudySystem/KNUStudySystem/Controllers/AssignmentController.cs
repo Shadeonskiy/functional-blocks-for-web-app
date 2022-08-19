@@ -41,6 +41,7 @@ namespace KNUStudySystem.Controllers
                     assignment.Speciality = Convert.ToString(reader["speciality"]);
                     assignment.Course = Convert.ToInt32(reader["course"]);
                     assignment.Group = Convert.ToInt32(reader["group"]);
+                    assignment.Assignment_Date = Convert.ToDateTime(reader["task_date"]);
                     assignment.Deadline = Convert.ToDateTime(reader["deadline"]);
 
                     assignments.Add(assignment);

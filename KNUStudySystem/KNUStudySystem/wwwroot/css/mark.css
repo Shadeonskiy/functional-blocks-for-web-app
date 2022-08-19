@@ -30,7 +30,7 @@
     margin : 0px 20px;
 }
 .mark__list-row {
-    border-bottom: 1px solid gray;;
+    border-bottom: 1px solid gray;
     display: flex;
     padding: 15px 0px;
     align-items: center;

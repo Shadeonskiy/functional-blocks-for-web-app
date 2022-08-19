@@ -20,7 +20,8 @@ namespace KNUStudySystem.Areas.Identity
                     options.UseMySql(
                         context.Configuration.GetConnectionString("MySqlConnection")));
 
-                services.AddDefaultIdentity<Student>(options => options.SignIn.RequireConfirmedAccount = true)
+                services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                    .AddRoles<IdentityRole>()
                     .AddEntityFrameworkStores<StudySystemDbContext>();
             });
         }

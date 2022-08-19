@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace KNUStudySystem.Controllers
 {
-    [Authorize]
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

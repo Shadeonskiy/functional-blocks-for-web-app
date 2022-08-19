@@ -1,51 +1,61 @@
-<link rel="stylesheet" href="~/css/tasks.css" asp-append-version="true">
+@using System.Globalization
 @model List<Assignment>
-    <!-- Main -->
+@{
+    int CalculateProgress(DateTime Deadline, DateTime Assignment_Date)
+    {
+        DateTime CurrentTime = DateTime.Now;
+        return Convert.ToInt32((1 - ((Deadline - CurrentTime).TotalMinutes / (Deadline - Assignment_Date).TotalMinutes)) * 100);
+    }
+    string GetTimeLeft(DateTime Deadline)
+    {
+        DateTime CurrentTime = DateTime.Now;
+        TimeSpan TimeDiff = Deadline - CurrentTime;
 
-<div class="task__main borders-margin">
-    <div class="task__main-filter set-center">
-        <div class = "task__main-headline-container" >
-            <h2 class = "headline">Welcome to "Tasks"</h2>
-        </div>
+        if (TimeDiff.Days > 0)
+        {
+            return(Convert.ToString(TimeDiff.Days) + " Days left");
+        }
+        else if (TimeDiff.Hours > 0)
+        {
+            return(Convert.ToString(TimeDiff.Hours) + " Hours left");
+        }
+        else if (TimeDiff.Minutes > 0)
+        {
+            return(Convert.ToString(TimeDiff.Minutes) + " Minutes left");
+        }
+        else if (TimeDiff.TotalSeconds > 0)
+        {
+            return("Less than one minute");
+        }
+        return("Time passed");
+    }
+}
+    <!-- Main-->
+<link rel="stylesheet" href="~/css/tasks.css" asp-append-version="true">
+<div class="task__container-row">
+    @foreach(var item in Model)
+    {
+        CultureInfo ci = new CultureInfo("en-US");
 
-        <div class = "task__main-filter-container" >
-            <div class="task__filter-selected">selected</div>
-            <div class="task__filter-sort">sort</div>
-            <div class="task__filter-filter">filter</div>
-            <div class="task__filter-cardshow">show like cards</div>
-            <div class="task__filter-rowshow"> show like row</div>
-        </div>
-    </div>
-    <div class="task__container-row">
+        int Progress = CalculateProgress(item.Deadline, item.Assignment_Date);
         <div class="task__element">
-            <h4 class = "task__date">December 10, 2020</h4>
-            <p class = "task__headline set-center">
-                <span>Testing</span>
-            </p>
-            <p class = "task__detailed set-center">
-                <span>Prototyping</span>
-            </p>
-            <span class = "task__progress">Progress</span>
-            <div class="task__progress-bar">
-                <div class="progress"></div>
-            </div>
-            <div class="task__days-left">
-                <div class = "task__days-timer">2 Days Left</div>
+        <h4 class = "task__date">@item.Assignment_Date.ToString("MMMM", ci) @item.Assignment_Date.Day, @item.Assignment_Date.Year</h4>
+        <p class = "task__headline set-center">
+          <span>@item.Assignment_Name</span>
+        </p>
+        <p class = "task__detailed set-center">
+          <span>@item.Assignment_Description</span>
+        </p>
+        <span class = "task__progress">Progress</span>
+        <div class="task__progress-bar">
+          <div class="progress" style = "width: @Progress%;">
+          </div>
+        </div>
+        <div class="task__days-left">
+            <div class = "task__days-timer">
+                @GetTimeLeft(item.Deadline)
             </div>
         </div>
-        <div class="task__element"></div>
-        <div class="task__element"></div>
-        <div class="task__element"></div>
-        <div class="task__element"></div>
-        <div class="task__element"></div>
-        <div class="task__element"></div>
-        <div class="task__element"></div>
-        <div class="task__element"></div>
-        <div class="task__element"></div>
-        <div class="task__element"></div>
-        <div class="task__element"></div>
-        <div class="task__element"></div>
-        <div class="task__element"></div>
-        <div class="task__element"></div>
-    </div>
+      </div>
+    }
 </div>

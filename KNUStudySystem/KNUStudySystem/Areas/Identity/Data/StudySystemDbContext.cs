@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace KNUStudySystem.Data
 {
-    public class StudySystemDbContext : IdentityDbContext<Student>
+    public class StudySystemDbContext : IdentityDbContext<AppUser>
     {
         public StudySystemDbContext(DbContextOptions<StudySystemDbContext> options)
             : base(options)

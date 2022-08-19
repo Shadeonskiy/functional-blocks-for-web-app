@@ -58,8 +58,8 @@ nav > ul > li {
     height: 25px;
     margin: 0px 5px;
 }
-.header__account-row { 
-    display: inline-block;
-    width: auto;
+.header__account-row {
     margin: auto;
+    margin-left: 5px;
+    width: auto;
 }
