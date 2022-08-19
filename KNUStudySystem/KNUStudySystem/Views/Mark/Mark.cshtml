@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="~/css/mark.css" asp-append-version="true">
+@model List<Mark>
+    <!-- Main -->
+<div class="mark__main borders-margin">
+    <div class="mark__main-filter set-center">
+        <div class = "mark__main-headline-container" >
+            <h2 class = "headline">Welcome to "Marks"</h2>
+        </div>
+
+        <div class = "mark__main-filter-container" >
+            <div class="mark__filter-selected">selected</div>
+            <div class="mark__filter-sort">sort</div>
+            <div class="mark__filter-filter">filter</div>
+            <div class="mark__filter-cardshow">show like cards</div>
+            <div class="mark__filter-rowshow"> show like row</div>
+            <div class="mark__filter-search"> search for...</div>
+        </div>
+    </div>
+
+    <div class="mark__main-list">
+        <div class="mark__list-row mark__list-namer">
+            <div class="mark__list-type">Type</div>
+            <div class="mark__list-date">Task Date</div>
+            <div class="mark__list-name">Name</div>
+            <div class="mark__list-mark">Mark</div>
+            <div class="mark__list-teacher">Teacher</div>
+            <div class="mark__list-date-evaluate">Evaluation Date</div>
+            <div class="mark__list-status">Status</div>
+        </div>
+        @foreach(var item in Model)
+        {
+            <div class="mark__list-row">
+                <div class="mark__list-type">@item.Type</div>
+                <div class="mark__list-date">@item.TaskDate</div>
+                <div class="mark__list-name">@item.Name</div>
+                <div class="mark__list-mark">@item.Grade</div>
+                <div class="mark__list-teacher">@item.Teacher</div>
+                <div class="mark__list-date-evaluate">@item.EvaluationDate</div>
+                <div class="mark__list-status">@item.Status</div>
+            </div>
+            
+        }
+    </div>
+</div>
+<script src="~/js/site.js"></script>
