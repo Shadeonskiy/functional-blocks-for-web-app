@@ -1,0 +1,67 @@
+.mark__container-row { 
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.mark__element{
+    width: 250px;
+    height: 170px;
+    margin: 10px 10px;
+    border-radius: 30px;
+    background-color: red;
+}
+.headline {
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+.mark__main-filter {
+    margin: 50px 0px;
+}
+.mark__main-headline-container {
+    width: 40%;
+}
+.mark__main-filter-container {
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+}
+.mark__main-filter-container > div {
+    margin : 0px 20px;
+}
+.mark__list-row {
+    border-bottom: 1px solid gray;
+    display: flex;
+    padding: 15px 0px;
+    align-items: center;
+}
+.mark__list-namer {
+    color: gray;
+    padding: 15px 0px;
+    font-weight: lighter;
+}
+.mark__list-type, .mark__list-date, .mark__list-name, .mark__list-mark, .mark__list-teacher, .mark__list-date-evaluate, .mark__list-status {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mark__list-type, .mark__list-date, .mark__list-name, .mark__list-teacher, .mark__list-date-evaluate, .mark__list-status  {
+    width: 15%;
+}
+.mark__list-mark { 
+    width: 10%;
+}
+.failed, .completed,.evaluating {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.failed { 
+    color: red;
+}
+.completed {
+    color: green;
+}
+.evaluating {
+    color: blue;
+}

@@ -1,0 +1,74 @@
+.task__container-row { 
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.task__element{
+    width: 250px;
+    height: 170px;
+    margin: 10px 10px;
+    border-radius: 30px;
+    background-color: lightgreen;
+}
+.headline {
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+.task__main-filter {
+    margin: 50px 0px;
+}
+.task__main-headline-container {
+    width: 40%;
+}
+.task__main-filter-container {
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+}
+.task__main-filter-container > div {
+    margin : 0px 20px;
+}
+.task__date {
+    color: gray;
+    font-weight: 200;
+    font-size: 14px;
+    padding: 20px 15px;
+}
+
+.task__headline {
+    font-size: 18px;
+}
+
+.task__detailed {
+    color: gray;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.task__progress-bar {
+    width: calc(100% - 40px);
+    height: 4px;
+    margin: 10px 10px;
+    background-color: #fff;
+}
+
+.progress {
+    background-color: red;
+    height: 100%;
+    width: 50%;
+}
+
+.task__progress {
+    margin: 0px 10px;
+    font-weight: bold;
+}
+
+.task__days-left {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.task__days-timer {
+    margin: 0px 30px;
+}
