@@ -9,19 +9,22 @@ namespace MySQLTest.Controllers
     public class AssignmentController : Controller
     {
         private readonly ILogger<AssignmentController> _logger;
+        private readonly Database _database;
 
-        public AssignmentController(ILogger<AssignmentController> logger)
+        public AssignmentController(ILogger<AssignmentController> logger, Database database)
         {
             _logger = logger;
+            _database = database;
         }
 
         public IActionResult Assignment()
         {
             List<Assignment> assignments = new List<Assignment>();
-            using (var connection = new MySqlConnection("server=s2.thehost.com.ua;user=MySQLBot;password=MySQLBot1;database=WeatherTEST"))
+            using (var connection = new MySqlConnection(_database.Connection))
             {
                 connection.Open();
-                MySqlCommand command = new MySqlCommand("SELECT * FROM tasks", connection);
+                _database.setCommand("SELECT * FROM tasks");
+                MySqlCommand command = new MySqlCommand(_database.Command, connection);
                 MySqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {

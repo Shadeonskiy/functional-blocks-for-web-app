@@ -2,3 +2,24 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+
+changeMarkStatusColor = () => {
+    const mark_status = document.querySelectorAll('.mark__list-status')
+    mark_status.forEach((element) => {
+        switch (element.textContent) {
+            case 'graded':
+                element.classList.add('completed');
+                break;
+            case 'not_graded':
+                element.classList.add('evaluating');
+                break;
+            case 'amogus':
+                element.classList.add('failed');
+                break;
+            default:
+                break;
+        }
+    })
+}
+changeMarkStatusColor()
+

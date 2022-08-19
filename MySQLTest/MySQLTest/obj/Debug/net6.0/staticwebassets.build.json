@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "twq5tjiTlThzoLiJwmWX4JMs2wWr/9fMqO53l723h0U=",
+  "Hash": "zV89v7VJPR4Ma9SY6lYqACDD7p9sOllZcvQ6anPqEdM=",
   "Source": "MySQLTest",
   "BasePath": "_content/MySQLTest",
   "Mode": "Default",
@@ -204,12 +204,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\Влад\\Desktop\\functional-blocks-for-web-app\\MySQLTest\\MySQLTest\\wwwroot\\js\\script.js",
+      "Identity": "C:\\Users\\Влад\\Desktop\\functional-blocks-for-web-app\\MySQLTest\\MySQLTest\\wwwroot\\js\\calendar_script.js",
       "SourceId": "MySQLTest",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Влад\\Desktop\\functional-blocks-for-web-app\\MySQLTest\\MySQLTest\\wwwroot\\",
       "BasePath": "_content/MySQLTest",
-      "RelativePath": "js/script.js",
+      "RelativePath": "js/calendar_script.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -218,7 +218,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\script.js"
+      "OriginalItemSpec": "wwwroot\\js\\calendar_script.js"
     },
     {
       "Identity": "C:\\Users\\Влад\\Desktop\\functional-blocks-for-web-app\\MySQLTest\\MySQLTest\\wwwroot\\js\\site.js",

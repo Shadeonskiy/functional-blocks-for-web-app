@@ -8,19 +8,22 @@ namespace MySQLTest.Controllers
     public class MarkController : Controller
     {
         private readonly ILogger<MarkController> _logger;
+        private readonly Database _database;
 
-        public MarkController(ILogger<MarkController> logger)
+        public MarkController(ILogger<MarkController> logger, Database database)
         {
             _logger = logger;
+            _database = database;
         }
 
         public IActionResult Mark()
         {
             List<Mark> marks = new List<Mark>();
-            using (var connection = new MySqlConnection("server=s2.thehost.com.ua;user=MySQLBot;password=MySQLBot1;database=WeatherTEST"))
+            using (var connection = new MySqlConnection(_database.Connection))
             {
                 connection.Open();
-                MySqlCommand command = new MySqlCommand("SELECT * FROM marks_test", connection);
+                _database.setCommand("SELECT * FROM marks_test");
+                MySqlCommand command = new MySqlCommand(_database.Command, connection);
                 MySqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {

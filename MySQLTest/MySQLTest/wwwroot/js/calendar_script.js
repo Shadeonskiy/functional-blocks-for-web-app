@@ -1,5 +1,4 @@
 let calendar = document.querySelector('.calendar')
-
 const month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 const year_numbers = [2018,2019,2020,2021,2022,2023,2024,2025,2026]
 
@@ -126,5 +125,5 @@ let dark_mode_toggle = document.querySelector('.dark-mode-switch')
 
 dark_mode_toggle.onclick = () => {
     document.querySelector('.calendar').classList.toggle('light')
-    document.querySelector('.calendar').classList.toggle('dark')
+    document.querySelector('.calendar   ').classList.toggle('dark')
 }

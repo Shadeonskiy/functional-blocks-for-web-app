@@ -1,4 +1,12 @@
+using MySQLTest.Models;
+using Microsoft.EntityFrameworkCore;
+using MySQLTest.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Create a Database object, which contains all the necessary info about the Connection
+string MySQLCon = builder.Configuration.GetConnectionString("Default");
+builder.Services.AddSingleton(new Database(MySQLCon));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
