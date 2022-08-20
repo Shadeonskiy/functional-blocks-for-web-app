@@ -1,0 +1,37 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model KNUStudySystem.ViewModels.ChangeRoleViewModel
+ 
+<link rel="stylesheet" href="~/css/admin.css" />
+ 
+<div class="wrapper">
+    <div class="admin__wrapper  set-center">
+        <form asp-action="Edit" method="post">
+        <div class="admin__list">
+            <div class="admin__container">
+                <h3>Зміна ролей для користувача @Model.UserName</h3>
+                <input type="hidden" name="userId" value="@Model.UserId" />
+                @foreach (IdentityRole role in Model.AllRoles)
+                {
+                    <div class="admin__checkbox-item">
+                        <input type="checkbox" name="roles" value="@role.Name"
+                                @(Model.UserRoles.Contains(role.Name) ? "checked=\"checked\"" : "") />@role.Name <br />
+                    </div>
+                }
+                <div class="admin__container">
+                    <div class="admin__button">
+                        <button type="submit" class = "set-shadow-white pointer">Зберегти</button>
+                    </div>
+                </div>
+            </div>
+            <div class="admin__container admin__button-container">
+                <div class="admin__button">
+                    <form onClick="history.go(-1); return false;">
+                        <button type="submit" class = "set-shadow-white pointer">Повернутись на попередню сторінку</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+    
+</div>

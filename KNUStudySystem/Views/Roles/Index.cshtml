@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityRole>
+
+<link rel="stylesheet" href="~/css/admin.css" />
+
+<div class="wrapper">
+    <div class="admin__wrapper set-center">
+        <div class="admin__headline">
+            <h2>Перелік ролей</h2>
+            <div class="admin__container admin__button-container">
+                <div class="admin__button">
+                    <form onClick="history.go(-1); return false;">
+                        <button type="submit" class = "set-shadow-white pointer">Повернутись на попередню сторінку</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="admin__wrapper  set-center">
+        <div class="admin__list">
+            <div class="admin__container set-flex">
+                <div class="admin__mail-item">ID</div>
+                <div class="admin__mail-item">Name</div>
+            </div>
+            @foreach (var role in Model)
+            {
+                <div class="admin__container set-flex">
+                    <div class="admin__mail-item">@role.Id</div>
+                    <div class="admin__mail-item">@role.Name</div>
+                    <form asp-action="Delete" asp-route-id="@role.Id" method="post">
+                        <div class="admin__button">
+                            <button type="submit" class = "set-shadow-white pointer negative">
+                                Видалити
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            }
+            <div class="admin__container admin__button-container">
+                <div class="admin__button"> 
+                    <form asp-action="Create">
+                        <button type="submit" class = "set-shadow-white pointer">Додати роль</button>
+                    </form>
+                </div>
+                <div class="admin__button">
+                    <form asp-action="UserList">
+                        <button type="submit" class = "set-shadow-white pointer">Список користувачів</button>
+                    </form>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>

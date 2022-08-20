@@ -1,0 +1,42 @@
+﻿@model IEnumerable<KNUStudySystem.Areas.Identity.Data.AppUser>
+
+<link rel="stylesheet" href="~/css/admin.css" />
+
+<div class="wrapper">
+    <div class="admin__wrapper set-center">
+        <div class="admin__headline">
+            <h2>Перелік користувачів</h2>
+            <div class="admin__container admin__button-container">
+                <div class="admin__button">
+                    <form onClick="history.go(-1); return false;">
+                        <button type="submit" class = "set-shadow-white pointer">Повернутись на попередню сторінку</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="admin__wrapper  set-center">
+        <div class="admin__list">
+            <div class="admin__container set-center">
+                <div class="admin__username-item">Username</div>
+                <div class="admin__mail-item">Email</div>
+                <div class="admin__button"></div> 
+            </div>
+            @foreach (var user in Model)
+            {
+                <div class="admin__container set-center">
+                    <div class="admin__username-item">@user.FirstName @user.LastName</div>
+                    <div class="admin__mail-item">@user.Email</div>
+                    <div class="admin__button">
+                        <a asp-action="Edit" asp-route-userid="@user.Id" class = "set-shadow-white pointer">Права доступу</a>   
+                    </div>
+                </div>
+            }
+        </div> 
+        
+    </div>
+    <div class="admin__wrapper  set-center">
+        <p><b>Total Users till @String.Format("{0 : dddd, MMMM d, yyyy}", DateTime.Now)  
+            : </b><span class="label label-primary">@Model.Count()</span></p>
+    </div>
+</div>

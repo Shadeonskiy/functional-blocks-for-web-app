@@ -1,2 +1,2 @@
 # functional-blocks-for-web-app
-StudyBotSystem by Nazar Radin and Vladyslav Lytvynchuk
+StudyBotSystem by Nazar Radin and Vladyslav Lytvynchuk (dva loha)
