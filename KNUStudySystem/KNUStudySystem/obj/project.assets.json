@@ -8901,19 +8901,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Влад\\.nuget\\packages\\": {}
+    "C:\\Users\\radin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\КНУ\\KnuStudySystemFiles\\KNUStudySystem\\KNUStudySystem\\KNUStudySystem.csproj",
+      "projectUniqueName": "D:\\KnuStudyWeb\\KnuStudy2108\\KNUStudySystem\\KNUStudySystem\\KNUStudySystem.csproj",
       "projectName": "KNUStudySystem",
-      "projectPath": "F:\\КНУ\\KnuStudySystemFiles\\KNUStudySystem\\KNUStudySystem\\KNUStudySystem.csproj",
-      "packagesPath": "C:\\Users\\Влад\\.nuget\\packages\\",
-      "outputPath": "F:\\КНУ\\KnuStudySystemFiles\\KNUStudySystem\\KNUStudySystem\\obj\\",
+      "projectPath": "D:\\KnuStudyWeb\\KnuStudy2108\\KNUStudySystem\\KNUStudySystem\\KNUStudySystem.csproj",
+      "packagesPath": "C:\\Users\\radin\\.nuget\\packages\\",
+      "outputPath": "D:\\KnuStudyWeb\\KnuStudy2108\\KNUStudySystem\\KNUStudySystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "D:\\NuGet\\NuGet.Config",
+        "C:\\Users\\radin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8984,7 +8984,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

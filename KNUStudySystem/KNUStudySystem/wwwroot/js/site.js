@@ -7,13 +7,13 @@ changeMarkStatusColor = () => {
     const mark_status = document.querySelectorAll('.mark__list-status')
     mark_status.forEach((element) => {
         switch (element.textContent) {
-            case 'graded':
+            case 'completed':
                 element.classList.add('completed');
                 break;
             case 'not_graded':
                 element.classList.add('evaluating');
                 break;
-            case 'amogus':
+            case 'failed':
                 element.classList.add('failed');
                 break;
             default:
