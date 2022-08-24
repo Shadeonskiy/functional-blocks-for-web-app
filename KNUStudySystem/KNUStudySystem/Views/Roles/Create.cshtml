@@ -1,11 +1,34 @@
-﻿@model string
- 
-<div asp-validation-summary="All" class="text-danger"></div>
- 
-<form asp-action="Create" method="post">
-    <div class="form-group">
-        <label for="name">Нова роль</label>
-        <input name="name" class="form-control" />
+﻿<link rel="stylesheet" href="~/css/admin.css" />
+
+@model string
+
+ <div class="wrapper">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="admin__wrapper  set-center">
+        <div class="admin__headline">
+            <h2>Додавання нової ролі</h2>
+            <div class="admin__container admin__button-container">
+                <div class="admin__button">
+                    <form onClick="history.go(-1); return false;">
+                        <button type="submit" class = "set-shadow-white pointer">Повернутись на попередню сторінку</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <button type="submit" class="btn btn-primary">Додати</button>
-</form>
+    <div class="admin__wrapper set-center">
+        <div class="admin__list">
+            <form asp-action="Create" method="post">
+                <div class="admin__container">
+                    <label for="name">Нова роль</label>
+                    <input name="name" class = "admin__input" />
+                </div>
+                <div class="admin__container">
+                    <div class="admin__button">
+                        <button type="submit" class = "set-shadow-white pointer">Додати</button>
+                    </div>
+                </div>
+            </form>
+        </div>  
+    </div>
+</div>

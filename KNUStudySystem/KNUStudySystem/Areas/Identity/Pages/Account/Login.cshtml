@@ -1,20 +1,27 @@
 ﻿@page
 @model LoginModel
 
-<link rel="stylesheet" href="~/css/login.css">
+@{
+    ViewData["Title"] = "Login";
+}
+
+<link rel="stylesheet" href="~/css/authorization.css" asp-append-version="true" />
+
 <main class="set-center">
     <div class="login">
         <form id="account" method="post">
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <h2 class = "login__namer">Login</h2>
+            <h2 class = "login__namer">@ViewData["Title"]</h2>
             <div class="wrapper set-center">
-                <label class = "login__input-namer" asp-for="Input.Email">Enter your login</label>
-                <input class="login__field" asp-for="Input.Email"/>
+                <input class="login__field" asp-for="Input.Email" value="" aria-labelledby="placeholder"/>
+                <label id="placeholder" class = "placeholder-input" asp-for="Input.Email">
+                    <div class="placeholder-input-text">Your Email</div>
+                </label>
             </div>
             <div class="wrapper set-center">
-                <label class = "login__input-namer" asp-for="Input.Password">Enter your password</label>
-                <input class="login__field" asp-for="Input.Password"/>
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
+                <input class="login__field" asp-for="Input.Password" value="" aria-labelledby="placeholder"/>
+                <label id="placeholder" class = "placeholder-input" asp-for="Input.Password">
+                    <div class="placeholder-input-text">Your Password</div>
+                </label>
             </div>
             <div class="wrapper set-center">
                 <div class="checkbox">
@@ -24,14 +31,15 @@
                     </label>
                 </div>
             </div>
+            <div asp-validation-summary="All" class="text-danger set-center"></div>
             <div class="wrapper set-center">
                 <input class = "set-shadow-white login__field-submit pointer" type="submit" value="Log in" required>
             </div>
             <div class="wrapper login__input-restore pointer">
-                <span><a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a></span>
+                <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
             </div>
             <div class="wrapper login__input-restore pointer">
-                <span><a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a></span>
+                <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
             </div>    
         </form>
     </div>
@@ -68,6 +76,6 @@
 </div>*@
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+    <partial name="_ValidationScriptsPartial" /> 
     <script src="~/js/login.js"></script>
 }

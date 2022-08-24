@@ -1,7 +1,5 @@
-@using KNUStudySystem.ViewModels
 <link rel="stylesheet" href="~/css/mark.css" asp-append-version="true">
-@model MarkFilteredViewModel
-
+@model List<Mark>
     <!-- Main -->
 <div class="mark__main borders-margin">
     <div class="mark__main-filter set-center">
@@ -10,78 +8,31 @@
         </div>
 
         <div class = "mark__main-filter-container" >
-            <div class="mark__filter-selected">
-                
-            </div>
-            <button class="mark__filter-filter">
-                <img class = "mark__filter-icon" src = "../../media/filter-symbol.png" />
-            </button>
-            <div class="mark__filter-sortby">
-                <button class="mark__dropdown-button">@Model.SortBy</button>
-                <div class="mark__dropdown-content">
-                        @if (Model.SortBy != "Name")
-                        {
-                            <a asp-controller="Mark" asp-action="Mark" asp-route-sortby="Name">Name</a>
-                        }
-                        @if (Model.SortBy != "Grade")
-                        {
-                            <a asp-controller="Mark" asp-action="Mark" asp-route-sortby="Grade">Grade</a>
-                        }
-                        @if (Model.SortBy != "Evaluation Date")
-                        {
-                            <a asp-controller="Mark" asp-action="Mark" 
-                                asp-route-sortby="Evaluation Date">Evaluation Date</a>
-                        }
-                </div>
-            </div>
-            <a class="mark__filter-sort" asp-area="" asp-controller="Mark" asp-action="Mark"
-                asp-route-sortby="@Model.SortBy" asp-route-ascending="@(!(Model.Ascending))">
-                @{
-                    if (Model.Ascending)
-                    {
-                        <img style = "width: 30px" src = "../../media/sorting-order-ascending.png" />
-                    }
-                    else
-                    {
-                        <img style = "width: 30px" src = "../../media/sorting-order.png" />
-                    }
-                    }
-
-            </a>
-            <button class="mark__filter-rowshow"> 
-                <img class = "mark__filter-icon" src = "../../media/list.png" />
-            </button>
-            <button class="mark__filter-cardshow">
-                <img class = "mark__filter-icon" src = "../../media/menu.png" />
-            </button>
-            <form asp-controller="Mark" asp-action="Mark" 
-            asp-route-sortby="@Model.SortBy" asp-route-ascending="@(Model.Ascending)" method="post">
-            <div class="mark__filter-search">
-                <input name = "filters" class="mark__filter-input"> 
-                <button class="mark__filter-cardshow" type = "submit">
-                    <img style = "height: 25px; margin: 0px 3px" src = "../../media/magnifying-glass.png" />
-                </button>
-            </div>
-            </form>
+            <div class="mark__filter-selected">selected</div>
+            <img id="sort-icon" src="../../media/arrow-down-wide-short-solid.svg" class="mark__filter-sort"></img>
+            <div class="mark__filter-filter">filter</div>
+            <div class="mark__filter-cardshow">show like cards</div>
+            <div class="mark__filter-rowshow"> show like row</div>
+            <div class="mark__filter-search"> search for...</div>
         </div>
     </div>
 
     <div class="mark__main-list">
         <div class="mark__list-row mark__list-namer">
             <div class="mark__list-type">Type</div>
-            <div class="mark__list-name">Subject</div>
+            <div class="mark__list-date">Task Date</div>
             <div class="mark__list-name">Name</div>
             <div class="mark__list-mark">Mark</div>
             <div class="mark__list-teacher">Teacher</div>
             <div class="mark__list-date-evaluate">Evaluation Date</div>
             <div class="mark__list-status">Status</div>
         </div>
-        @foreach(var item in Model.Marks)
+        @foreach(var item in Model)
         {
             <div class="mark__list-row">
-                <div class="mark__list-type">@item.TaskType</div>
-                <div class="mark__list-date">@item.Subject</div>
-                <div class="mark__list-name">@item.TaskName</div>
+                <div class="mark__list-type">@item.Type</div>
+                <div class="mark__list-date">@item.TaskDate</div>
+                <div class="mark__list-name">@item.Name</div>
                 <div class="mark__list-mark">@item.Grade</div>
                 <div class="mark__list-teacher">@item.Teacher</div>
                 <div class="mark__list-date-evaluate">@item.EvaluationDate</div>

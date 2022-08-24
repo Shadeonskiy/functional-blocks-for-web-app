@@ -1,0 +1,28 @@
+﻿@page
+@model RegisterConfirmationModel
+@{
+    ViewData["Title"] = "Register confirmation";
+}
+
+<link rel="stylesheet" href="~/css/password.css" asp-append-version="true"/>
+
+@{
+    if (@Model.DisplayConfirmAccountLink)
+    {
+<p>
+    This app does not currently have a real email sender registered, see <a href="https://aka.ms/aspaccountconf">these docs</a> for how to configure a real email sender.
+    Normally this would be emailed: <a id="confirm-link" href="@Model.EmailConfirmationUrl">Click here to confirm your account</a>
+</p>
+    }
+    else
+    {
+        <div class="password">
+            <div class="password__container">
+                <div class="wrapper">
+                    <h2>@ViewData["Title"]</h2>
+                    <h4 class="logout-link">Please check your email to reset your password.</h4>
+                </div>
+            </div>
+        </div>
+    }
+}

@@ -155,6 +155,53 @@ namespace KNUStudySystem.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "TeacherInfo",
+                columns: table => new
+                {
+                    UserId = table.Column<string>(maxLength: 255, nullable: false),
+                    UserName = table.Column<string>(maxLength: 256, nullable: true),
+                    Department = table.Column<string>(type: "text", maxLength: 256, nullable: true),
+                    Faculty = table.Column<string>(type: "text", maxLength: 256, nullable: true),
+                    Specialty = table.Column<string>(type: "text", maxLength: 256, nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TeacherInfo", x => x.UserId);
+                    table.ForeignKey(
+                        name: "FK_TeacherInfo_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "StudentInfo",
+                columns: table => new
+                {
+                    UserId = table.Column<string>(maxLength: 255, nullable: false),
+                    UserName = table.Column<string>(maxLength: 256, nullable: true),
+                    Department = table.Column<string>(type: "text", maxLength: 256, nullable: true),
+                    Faculty = table.Column<string>(type: "text", maxLength: 256, nullable: true),
+                    Specialty = table.Column<string>(type: "text", maxLength: 256, nullable: true),
+                    Course = table.Column<string>(type: "tinyint", maxLength: 1, nullable: true),
+                    Group = table.Column<string>(type: "tinyint", maxLength: 1, nullable: true),
+                    SubGroup = table.Column<string>(type: "tinyint", maxLength: 1, nullable: true),
+                    FreeGrouping = table.Column<string>(type: "text", maxLength: 256, nullable: true),
+
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_StudentInfo", x => x.UserId);
+                    table.ForeignKey(
+                        name: "FK_StudentInfo_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -191,6 +238,18 @@ namespace KNUStudySystem.Migrations
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "UserNameIndex",
+                table: "TeacherInfo",
+                column: "UserName",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "UserNameIndex",
+                table: "StudentInfo",
+                column: "UserName",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -215,6 +274,12 @@ namespace KNUStudySystem.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "TeacherInfo");
+
+            migrationBuilder.DropTable(
+                name: "StudentInfo");
         }
     }
 }

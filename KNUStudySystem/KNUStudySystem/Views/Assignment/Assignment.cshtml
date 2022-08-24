@@ -1,10 +1,23 @@
 @using System.Globalization
 @model List<Assignment>
 @{
+    bool isProgressNotNullOrHigherThan100(int Progress)
+    {
+        if (Progress > 100 || Progress < 0)
+        {
+            return true;
+        }
+        return false;
+
+    }
     int CalculateProgress(DateTime Deadline, DateTime Assignment_Date)
     {
         DateTime CurrentTime = DateTime.Now;
-        return Convert.ToInt32((1 - ((Deadline - CurrentTime).TotalMinutes / (Deadline - Assignment_Date).TotalMinutes)) * 100);
+        int Progress = Convert.ToInt32((1 - ((Deadline - CurrentTime).TotalMinutes / (Deadline - Assignment_Date).TotalMinutes)) * 100);
+        if (!isProgressNotNullOrHigherThan100(Progress))
+            return Progress;
+        else
+            return 100;
     }
     string GetTimeLeft(DateTime Deadline)
     {

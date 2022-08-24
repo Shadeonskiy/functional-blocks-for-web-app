@@ -6,7 +6,6 @@ namespace KNUStudySystem.Models
     {
         public int Id { get; set; }
         public string Assignment_Name { get; set; }
-        public string Assignment_Type { get; set; }
         public string Assignment_Description { get; set; }
         public string? File_Id { get; set; }
         public string? Subject { get; set; }

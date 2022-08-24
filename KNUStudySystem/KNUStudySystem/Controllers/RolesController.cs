@@ -8,18 +8,24 @@ using KNUStudySystem.Models;
 using KNUStudySystem.ViewModels;
 using KNUStudySystem.Areas.Identity.Data;
 using Microsoft.AspNetCore.Authorization;
+using System.Dynamic;
+using Microsoft.AspNetCore.Razor.TagHelpers;
+using MySql.Data.MySqlClient;
 
 namespace KNUStudySystem.Controllers
 {
-    [Authorize(Roles="Адміністратор")]
+    /*[Authorize(Roles = "Адміністратор")]*/
     public class RolesController : Controller
     {
         RoleManager<IdentityRole> _roleManager;
         UserManager<AppUser> _userManager;
-        public RolesController(RoleManager<IdentityRole> roleManager, UserManager<AppUser> userManager)
+        private readonly Database _database;
+        public RolesController(RoleManager<IdentityRole> roleManager, UserManager<AppUser> userManager, Database database)
         {
             _roleManager = roleManager;
             _userManager = userManager;
+            _database = database;
+
         }
         public IActionResult Index() => View(_roleManager.Roles.ToList());
 
@@ -70,6 +76,7 @@ namespace KNUStudySystem.Controllers
                 ChangeRoleViewModel model = new ChangeRoleViewModel
                 {
                     UserId = user.Id,
+                    UserName = user.FirstName + " " + user.LastName,
                     UserEmail = user.Email,
                     UserRoles = userRoles,
                     AllRoles = allRoles
@@ -87,22 +94,62 @@ namespace KNUStudySystem.Controllers
             if (user != null)
             {
                 // получем список ролей пользователя
-                var userRoles = await _userManager.GetRolesAsync(user);
+                var user_roles = await _userManager.GetRolesAsync(user);
                 // получаем все роли
-                var allRoles = _roleManager.Roles.ToList();
+                var all_roles = _roleManager.Roles.ToList();
                 // получаем список ролей, которые были добавлены
-                var addedRoles = roles.Except(userRoles);
+                var added_roles = roles.Except(user_roles);
                 // получаем роли, которые были удалены
-                var removedRoles = userRoles.Except(roles);
+                var removed_roles = user_roles.Except(roles);
+                if (added_roles.Contains("Вчитель"))
+                {
+                    AddTeacherInfoToDb(user);
+                }
+                if (removed_roles.Contains("Вчитель"))
+                {
+                    DeleteTeacherInfoFromDb(user);
+                }
+                await _userManager.AddToRolesAsync(user, added_roles);
 
-                await _userManager.AddToRolesAsync(user, addedRoles);
-
-                await _userManager.RemoveFromRolesAsync(user, removedRoles);
+                await _userManager.RemoveFromRolesAsync(user, removed_roles);
+                
+                
 
                 return RedirectToAction("UserList");
             }
 
             return NotFound();
+        }
+        public void AddTeacherInfoToDb(AppUser user)
+        {
+            using (var connection = new MySqlConnection(_database.Connection))
+            {
+                connection.Open();
+                _database.setCommand("INSERT INTO TeacherInfo (UserId, UserName) VALUES (@user.Id, @user.UserName)");
+                MySqlCommand command = new MySqlCommand(_database.Command, connection);
+                MySqlParameter[] parameters = {
+                    new MySqlParameter("@user.Id", user.Id),
+                    new MySqlParameter("@user.UserName", user.UserName)
+                };
+                foreach(var parameter in parameters)
+                {
+                    command.Parameters.Add(parameter);
+                }
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void DeleteTeacherInfoFromDb(AppUser user)
+        {
+            using (var connection = new MySqlConnection(_database.Connection))
+            {
+                connection.Open();
+                _database.setCommand("DELETE FROM TeacherInfo WHERE UserId = @user.Id");
+                MySqlCommand command = new MySqlCommand(_database.Command, connection);
+                MySqlParameter parameter = new MySqlParameter("@user.Id", user.Id);
+                command.Parameters.Add(parameter);
+                command.ExecuteNonQuery();
+            }
         }
     }
 }

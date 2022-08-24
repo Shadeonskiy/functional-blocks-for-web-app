@@ -11,6 +11,11 @@ a {
 .pointer {
     cursor: pointer;
 }
+
+.set-flex {
+    display: flex;
+}
+
 .set-center{
     display: flex;
     justify-content: center;
@@ -23,4 +28,15 @@ a {
 .set-shadow-white {
     color: #fff;
     text-shadow: 0px 0px 3px #000;
+}
+.negative {
+    background-color: red !important;
+}
+
+.negative-color {
+    color: rgb(196, 88, 88) !important;
+}
+
+input {
+    outline: none;
 }

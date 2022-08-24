@@ -32,9 +32,8 @@ namespace KNUStudySystem.Controllers
                 while (reader.Read())
                 {
                     Assignment assignment = new Assignment();
-                    assignment.Id = Convert.ToInt32(reader["task_id"]);
+                    assignment.Id = Convert.ToInt32(reader["id"]);
                     assignment.Assignment_Name = Convert.ToString(reader["task_name"]);
-                    assignment.Assignment_Type = Convert.ToString(reader["task_type"]);
                     assignment.Assignment_Description = Convert.ToString(reader["task_description"]);
                     assignment.File_Id = Convert.ToString(reader["file_id"]);
                     assignment.Subject = Convert.ToString(reader["subject"]);

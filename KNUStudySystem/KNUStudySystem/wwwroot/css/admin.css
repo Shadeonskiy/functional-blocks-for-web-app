@@ -1,0 +1,48 @@
+.wrapper {
+    margin: 30px 0px;
+}
+.admin__headline {
+     border-bottom: 2px solid #000;
+     padding: 10px 0px;
+     width:100%;
+}
+.admin__wrapper{
+    margin: 0px 150px;
+}
+.admin__list,.admin__item {
+    width: 100%;
+}
+.admin__container {
+    margin: 10px 0px;
+}
+.admin__mail-item,.admin__button,.admin__username-item,.admin__role-item { 
+    width:25%;
+    align-items: flex-start;
+}
+.admin__button > a, button {
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    background-color: rgb(48, 110, 171);
+    padding: 10px 20px;
+}
+
+.admin__input {
+    padding: 10px 20px;
+    border: 1px solid #000;
+    width: 100%;
+    margin: 10px 0px;
+}
+.admin__checkbox-item > input {
+    margin: 0px 10px 0px 0px;
+}
+.admin__checkbox-item {
+    padding: 5px 0px;
+}
+.admin__button-container {
+    display: flex;
+}
+.admin__button-container > .admin__button { 
+    margin: 0px 20px 0px 0px;
+    width: auto;
+}
