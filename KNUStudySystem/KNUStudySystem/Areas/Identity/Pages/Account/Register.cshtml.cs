@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using KNUStudySystem.Models;
 
 namespace KNUStudySystem.Areas.Identity.Pages.Account
 {
@@ -22,19 +23,25 @@ namespace KNUStudySystem.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<AppUser> _signInManager;
         private readonly UserManager<AppUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly Database _database;
 
         public RegisterModel(
             UserManager<AppUser> userManager,
             SignInManager<AppUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            RoleManager<IdentityRole> roleManager,
+            IEmailSender emailSender,
+            Database database)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
+            _roleManager = roleManager;
             _emailSender = emailSender;
+            _database = database;
         }
 
         [BindProperty]
@@ -88,6 +95,18 @@ namespace KNUStudySystem.Areas.Identity.Pages.Account
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
+                    var default_role = _roleManager.FindByNameAsync("Студент").Result;
+                    if (default_role != null)
+                    {
+                        IdentityResult role_result = await _userManager.AddToRoleAsync(user, default_role.Name);
+                        Student student = new Student
+                        {
+                            UserId = user.Id,
+                            UserName = user.UserName
+                        };
+                        student.AddInfoToDb(_database);
+                    }
+
                     _logger.LogInformation("User created a new account with password.");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);

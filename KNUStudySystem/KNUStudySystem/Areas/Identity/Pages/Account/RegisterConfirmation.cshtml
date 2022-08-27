@@ -4,7 +4,8 @@
     ViewData["Title"] = "Register confirmation";
 }
 
-<h1>@ViewData["Title"]</h1>
+<link rel="stylesheet" href="~/css/password.css" asp-append-version="true"/>
+
 @{
     if (@Model.DisplayConfirmAccountLink)
     {
@@ -15,8 +16,13 @@
     }
     else
     {
-<p>
-        Please check your email to confirm your account.
-</p>
+        <div class="password">
+            <div class="password__container">
+                <div class="wrapper">
+                    <h2>@ViewData["Title"]</h2>
+                    <h4 class="logout-link">Please check your email to reset your password.</h4>
+                </div>
+            </div>
+        </div>
     }
 }

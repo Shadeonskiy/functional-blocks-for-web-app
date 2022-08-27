@@ -10,18 +10,23 @@ using KNUStudySystem.Areas.Identity.Data;
 using Microsoft.AspNetCore.Authorization;
 using System.Dynamic;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using MySql.Data.MySqlClient;
 
 namespace KNUStudySystem.Controllers
 {
     /*[Authorize(Roles = "Адміністратор")]*/
+    [AllowAnonymous]
     public class RolesController : Controller
     {
         RoleManager<IdentityRole> _roleManager;
         UserManager<AppUser> _userManager;
-        public RolesController(RoleManager<IdentityRole> roleManager, UserManager<AppUser> userManager)
+        private readonly Database _database;
+        public RolesController(RoleManager<IdentityRole> roleManager, UserManager<AppUser> userManager, Database database)
         {
             _roleManager = roleManager;
             _userManager = userManager;
+            _database = database;
+
         }
         public IActionResult Index() => View(_roleManager.Roles.ToList());
 
@@ -90,17 +95,39 @@ namespace KNUStudySystem.Controllers
             if (user != null)
             {
                 // получем список ролей пользователя
-                var userRoles = await _userManager.GetRolesAsync(user);
+                var user_roles = await _userManager.GetRolesAsync(user);
                 // получаем все роли
-                var allRoles = _roleManager.Roles.ToList();
+                var all_roles = _roleManager.Roles.ToList();
                 // получаем список ролей, которые были добавлены
-                var addedRoles = roles.Except(userRoles);
+                var added_roles = roles.Except(user_roles);
                 // получаем роли, которые были удалены
-                var removedRoles = userRoles.Except(roles);
+                var removed_roles = user_roles.Except(roles);
+                if (added_roles.Contains("Викладач"))
+                {
+                    Teacher teacher = new Teacher
+                    {
+                        UserId = user.Id,
+                        UserName = user.UserName
+                    };
+                    teacher.AddInfoToDb(_database);
+                }
+                if (removed_roles.Contains("Викладач"))
+                {
+                    Teacher teacher = new Teacher();
+                    teacher.UserId = user.Id;
+                    teacher.DeleteInfoFromDb(_database);
+                }
+                if (removed_roles.Contains("Студент"))
+                {
+                    Student student = new Student();
+                    student.UserId = user.Id;
+                    student.DeleteInfoFromDb(_database);
+                }    
+                await _userManager.AddToRolesAsync(user, added_roles);
 
-                await _userManager.AddToRolesAsync(user, addedRoles);
-
-                await _userManager.RemoveFromRolesAsync(user, removedRoles);
+                await _userManager.RemoveFromRolesAsync(user, removed_roles);
+                
+                
 
                 return RedirectToAction("UserList");
             }

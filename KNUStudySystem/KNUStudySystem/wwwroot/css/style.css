@@ -33,6 +33,10 @@ a {
     background-color: red !important;
 }
 
+.negative-color {
+    color: rgb(196, 88, 88) !important;
+}
+
 input {
     outline: none;
 }

@@ -23,17 +23,18 @@ namespace KNUStudySystem.Controllers
         public IActionResult Assignment()
         {
             List<Assignment> assignments = new List<Assignment>();
-            using (var connection = new MySqlConnection(_database.Connection))
+            using (var connection = _database.getConnectionToDb())
             {
                 connection.Open();
-                _database.setCommand("SELECT * FROM tasks");
-                MySqlCommand command = new MySqlCommand(_database.Command, connection);
+                _database.setCommand("SELECT * FROM Tasks");
+                MySqlCommand command = _database.getExecutableCommand(connection);
                 MySqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
                     Assignment assignment = new Assignment();
-                    assignment.Id = Convert.ToInt32(reader["id"]);
+                    assignment.Id = Convert.ToInt32(reader["task_id"]);
                     assignment.Assignment_Name = Convert.ToString(reader["task_name"]);
+                    assignment.Assignment_Type = Convert.ToString(reader["task_type"]);
                     assignment.Assignment_Description = Convert.ToString(reader["task_description"]);
                     assignment.File_Id = Convert.ToString(reader["file_id"]);
                     assignment.Subject = Convert.ToString(reader["subject"]);

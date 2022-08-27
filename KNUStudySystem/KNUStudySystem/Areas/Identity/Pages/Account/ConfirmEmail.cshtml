@@ -1,0 +1,16 @@
+﻿@page
+@model ConfirmEmailModel
+@{
+    ViewData["Title"] = "Confirm email";
+}
+
+<link rel="stylesheet" href="~/css/password.css" asp-append-version="true"/>
+
+<div class="password">
+    <div class="password_container">
+        <div class="wrapper">
+            <h2>@ViewData["Title"]</h2>
+            <h4 class = "logout-link">Your account has been successfully confirmed. Please <a asp-page="./Login">click here to log in</a>.</h4>
+        </div>
+    </div>
+</div>

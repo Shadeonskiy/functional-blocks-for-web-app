@@ -182,3 +182,9 @@ F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\bin\Debug\netcoreapp
 F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\bin\Debug\netcoreapp3.1\StarkbankEcdsa.dll
 F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ForgotPassword.cshtml.g.cs
 F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\RegisterConfirmation.cshtml.g.cs
+F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResetPasswordConfirmation.cshtml.g.cs
+F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ForgotPasswordConfirmation.cshtml.g.cs
+F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\AccessDenied.cshtml.g.cs
+F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResetPassword.cshtml.g.cs
+F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ConfirmEmail.cshtml.g.cs
+F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Lockout.cshtml.g.cs

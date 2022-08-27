@@ -5,6 +5,8 @@ using System.Diagnostics;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
+using System.Linq;
+using KNUStudySystem.ViewModels;
 
 namespace KNUStudySystem.Controllers
 {
@@ -19,44 +21,38 @@ namespace KNUStudySystem.Controllers
             _database = database;
         }
 
-        public IActionResult Mark()
+        private List<Mark> ParseDB(string filters)
         {
             List<Mark> marks = new List<Mark>();
-            using (var connection = new MySqlConnection(_database.Connection))
+            using (var connection = _database.getConnectionToDb())
             {
-                Console.WriteLine(_database.Connection);
                 connection.Open();
-<<<<<<< Updated upstream
-                _database.setCommand("SELECT * FROM marks_test");
-=======
                 _database.setCommand("SELECT Tasks.task_id, Tasks.task_name, Tasks.subject, " +
                     "Tasks.task_type, Marks.id, Marks.comment, Marks.grade,  " +
                     "Marks.teacher, Marks.evaluation_date, Marks.status " +
                     "FROM Tasks JOIN Marks ON Tasks.task_id = Marks.task_id " +
-                    "WHERE task_name LIKE \'"+filters+"%\'");
->>>>>>> Stashed changes
-                using var command = new MySqlCommand(_database.Command, connection);
+                    "WHERE task_name LIKE \'" + filters + "%\'");
+                using var command = _database.getExecutableCommand(connection);
                 using var reader = command.ExecuteReader();
                 while (reader.Read())
                 {
                     Mark mark = new Mark();
                     mark.Id = Convert.ToInt32(reader["id"]);
-                    mark.Type = Convert.ToString(reader["type"]);
-                    mark.TaskDate = Convert.ToDateTime(reader["task_date"]);
-                    mark.Name = Convert.ToString(reader["name"]);
+                    mark.TaskId = Convert.ToInt32(reader["task_id"]);
+                    mark.TaskName = Convert.ToString(reader["task_name"]);
+                    mark.TaskType = Convert.ToString(reader["task_type"]);
+                    mark.Comment = Convert.ToString(reader["comment"]);
+                    mark.Subject = Convert.ToString(reader["subject"]);
                     mark.Grade = Convert.ToInt32(reader["grade"]);
                     mark.Teacher = Convert.ToString(reader["teacher"]);
                     mark.EvaluationDate = Convert.ToDateTime(reader["evaluation_date"]);
                     switch (reader["status"])
                     {
-                        case "graded":
-                            mark.Status = status.graded;
+                        case "COMPLETED":
+                            mark.Status = status.completed;
                             break;
-                        case "not graded":
-                            mark.Status = status.not_graded;
-                            break;
-                        case "amogus":
-                            mark.Status = status.amogus;
+                        case "FAILED":
+                            mark.Status = status.failed;
                             break;
                     }
                     marks.Add(mark);
@@ -64,7 +60,28 @@ namespace KNUStudySystem.Controllers
                 reader.Close();
                 connection.Close();
             }
-            return View(marks);
+            return marks;
+        }
+
+        public IActionResult Mark(bool ascending, string sortBy, /*List<Filter> filters*/string filters)
+        {
+            MarkFilteredViewModel MarksView = new MarkFilteredViewModel();
+
+            MarksView.Ascending = ascending;
+            if (sortBy == null)
+                sortBy = "Evaluation Date";
+            MarksView.SortBy = sortBy;
+            //MarksView.Filters = filters;
+            MarksView.Marks = ParseDB(filters);
+            if (sortBy == "Evaluation Date")
+                MarksView.Marks = MarksView.Marks.OrderBy(o => o.EvaluationDate).ToList();
+            else if (sortBy == "Name")
+                MarksView.Marks = MarksView.Marks.OrderBy(o => o.TaskName).ToList();
+            else if (sortBy == "Grade")
+                MarksView.Marks = MarksView.Marks.OrderBy(o => o.Grade).ToList();
+            if (!ascending)
+                MarksView.Marks.Reverse();
+            return View(MarksView);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

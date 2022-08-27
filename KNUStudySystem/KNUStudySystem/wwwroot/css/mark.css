@@ -1,43 +1,54 @@
-.mark__container-row { 
+button {
+    background-color: white;
+    border: none;
+}
+
+.mark__container-row {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-.mark__element{
+
+.mark__element {
     width: 250px;
     height: 170px;
     margin: 10px 10px;
     border-radius: 30px;
     background-color: red;
 }
+
 .headline {
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 3px;
 }
+
 .mark__main-filter {
     margin: 50px 0px;
 }
+
 .mark__main-headline-container {
     width: 40%;
 }
+
 .mark__main-filter-container {
     width: 60%;
     display: flex;
     justify-content: flex-end;
-<<<<<<< Updated upstream
-=======
     align-items: center;
 }
+
 .mark__dropdown-button {
     padding: 16px;
     font-size: 16px;
     font-weight: bold;
 }
+
 .mark__filter-sortby {
     position: relative;
     display: inline-block;
 }
+
 .mark__dropdown-content {
     display: none;
     position: absolute;
@@ -46,20 +57,23 @@
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
+
 .mark__dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
+
 .mark__dropdown-content a:hover {
     background-color: #ddd;
 }
+
 .mark__filter-sortby:hover .mark__dropdown-content {
-    margin-top: -10px;
     position: absolute;
     display: inline-block;
 }
+
 .mark__filter-search {
     display: flex;
     align-items: center;
@@ -67,11 +81,13 @@
     border-bottom-width: 2px;
     border-bottom-style: solid;
 }
+
 .mark__filter-icon {
     width: 30px;
     height: 30px;
     margin: 0px 10px;
 }
+
 .mark__filter-input {
     border: none;
     height: 30px;
@@ -79,47 +95,57 @@
     font-weight: bold;
     font-size: 14px;
 }
+
 .mark__filter-input:focus {
     border: none;
     outline: none;
->>>>>>> Stashed changes
 }
+
 .mark__main-filter-container > div {
-    margin : 0px 20px;
+    margin: 0px 20px;
 }
+
 .mark__list-row {
     border-bottom: 1px solid gray;
     display: flex;
     padding: 15px 0px;
     align-items: center;
 }
+
 .mark__list-namer {
     color: gray;
     padding: 15px 0px;
     font-weight: lighter;
 }
-.mark__list-type, .mark__list-date, .mark__list-name, .mark__list-mark, .mark__list-teacher, .mark__list-date-evaluate, .mark__list-status {
+
+.mark__list-type, .mark__list-subject, .mark__list-name, .mark__list-mark, .mark__list-teacher, .mark__list-date-evaluate, .mark__list-status {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.mark__list-type, .mark__list-date, .mark__list-name, .mark__list-teacher, .mark__list-date-evaluate, .mark__list-status  {
+
+.mark__list-type, .mark__list-subject, .mark__list-name, .mark__list-teacher, .mark__list-date-evaluate, .mark__list-status {
     width: 15%;
 }
-.mark__list-mark { 
+
+.mark__list-mark {
     width: 10%;
 }
-.failed, .completed,.evaluating {
+
+.failed, .completed, .evaluating {
     font-size: 14px;
     text-transform: uppercase;
 }
-.failed { 
+
+.failed {
     color: red;
 }
+
 .completed {
     color: green;
 }
+
 .evaluating {
     color: blue;
 }

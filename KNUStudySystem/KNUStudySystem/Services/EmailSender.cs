@@ -35,7 +35,7 @@ namespace KNUStudySystem.Services
             var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage()
             {
-                From = new EmailAddress("shadeonskiy@gmail.com", "Password Recovery"),
+                From = new EmailAddress("shadeonskiy@gmail.com", "KNUStudySystem"),
                 Subject = subject,
                 PlainTextContent = message,
                 HtmlContent = message

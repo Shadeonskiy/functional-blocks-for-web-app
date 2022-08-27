@@ -1,0 +1,16 @@
+﻿@page
+@model AccessDeniedModel
+@{
+    ViewData["Title"] = "Access denied";
+}
+
+<link rel="stylesheet" href="~/css/password.css" asp-append-version="true" />
+
+<div class="password">
+    <div class="password__container">
+        <div class="wrapper negative-color">
+            <h2 class="text-danger">@ViewData["Title"]</h2>
+            <h4 class="text-danger logout-link">You do not have access to this resource :(</h4>
+        </div>
+    </div>
+</div>
