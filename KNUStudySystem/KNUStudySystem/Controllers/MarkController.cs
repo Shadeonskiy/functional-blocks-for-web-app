@@ -26,7 +26,15 @@ namespace KNUStudySystem.Controllers
             {
                 Console.WriteLine(_database.Connection);
                 connection.Open();
+<<<<<<< Updated upstream
                 _database.setCommand("SELECT * FROM marks_test");
+=======
+                _database.setCommand("SELECT Tasks.task_id, Tasks.task_name, Tasks.subject, " +
+                    "Tasks.task_type, Marks.id, Marks.comment, Marks.grade,  " +
+                    "Marks.teacher, Marks.evaluation_date, Marks.status " +
+                    "FROM Tasks JOIN Marks ON Tasks.task_id = Marks.task_id " +
+                    "WHERE task_name LIKE \'"+filters+"%\'");
+>>>>>>> Stashed changes
                 using var command = new MySqlCommand(_database.Command, connection);
                 using var reader = command.ExecuteReader();
                 while (reader.Read())
