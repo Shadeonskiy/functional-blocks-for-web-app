@@ -54,7 +54,7 @@
                 <div class="header__account set-center">
                     <div class = "header__menu-element">
                         <div class = "back-image account-icon pointer" style = "background-image: url(../../media/ukraine.png);"></div>
-                        <div class = "back-image account-icon pointer" style = "background-image: url(../../media/dark-mode.png);"></div>
+                        <div class = "header__switcher-theme pointer" onclick="change_theme()" style = "background-image: url(../../media/dark-mode.png);"></div>
                     </div>
                     <div class="header__account-user">
                         <div class = "header__account-image">
@@ -80,8 +80,7 @@
                 &copy; 2022 - KNUStudySystem - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
             </div>
         </footer>
-        <script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/scripts.js"></script>
         @RenderSection("Scripts", required: false)
     </body>
 </html>
