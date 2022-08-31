@@ -1,13 +1,12 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>@ViewData["Title"] -KNUStudySystem</title>
-        <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+        <script src="https://kit.fontawesome.com/8cd4cc108d.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
         <link rel="stylesheet" href="~/css/header.css" asp-append-version="true">
         <link rel="stylesheet" href="~/css/footer.css" asp-append-version="true">
@@ -26,13 +25,13 @@
                             </a>
                         </li>
                         <li>
-                            <a class = "header__menu-element pointer" asp-area="" asp-controller="Assignment" asp-action="Assignment">
+                            <a class = "header__menu-element pointer" asp-area="" asp-controller="Assignment" asp-action="Index">
                                 <div class = "back-image header__icon" style = "background-image: url(../../media/task.png);"></div>
                                 <span>Tasks</span>
                             </a>
                         </li>
                         <li>
-                            <a class = "header__menu-element pointer" asp-area="" asp-controller="Mark" asp-action="Mark">
+                            <a class = "header__menu-element pointer" asp-area="" asp-controller="Materials" asp-action="Index">
                                 <div class = "back-image header__icon" style = "background-image: url(../../media/book-of-black-cover-closed.png);"></div>
                                 <span>Materials</span>
                             </a>
@@ -44,7 +43,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class = "header__menu-element pointer" asp-area="" asp-controller="Mark" asp-action="Mark">
+                            <a class="header__menu-element pointer" asp-area="" asp-controller="Mark" asp-action="Index" asp-route-sortby="">
                                 <div class = "back-image header__icon" style = "background-image: url(../../media/a-plus-test-result-of-school.png);"></div>
                                 <span>My marks</span>
                             </a>
@@ -54,7 +53,7 @@
                 <div class="header__account set-center">
                     <div class = "header__menu-element">
                         <div class = "back-image account-icon pointer" style = "background-image: url(../../media/ukraine.png);"></div>
-                        <div class = "back-image account-icon pointer" style = "background-image: url(../../media/dark-mode.png);"></div>
+                        <div class = "header__switcher-theme pointer" onclick="change_theme()" style = "background-image: url(../../media/dark-mode.png);"></div>
                     </div>
                     <div class="header__account-user">
                         <div class = "header__account-image">
@@ -70,7 +69,7 @@
             </div>
         </header>
         <div class="container">
-            <main role="main" class="pb-3">
+            <main role="main">
                 @RenderBody()
             </main>
         </div>
@@ -80,8 +79,7 @@
                 &copy; 2022 - KNUStudySystem - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
             </div>
         </footer>
-        <script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/scripts.js"></script>
         @RenderSection("Scripts", required: false)
     </body>
 </html>

@@ -4,9 +4,32 @@
     padding: 0;
     font-family: sans-serif;
 }
-a { 
+body {
+    background-color: var(--light-back);
+    color: var(--light-theme-color);
+}
+
+:root {
+    /*  */
+    /* Dark theme */
+    --dark-header-footer: #0A0B1F;
+    --dark-back: #17182B;
+    --dark-form-back: #48465C;
+    --dark-background-item: #323048;
+    --dark-theme-color: #fff;
+    /* Light theme */
+    --light-header-footer: #F0FBFB;
+    --light-back: #D9EAEA;
+    --light-form-back: #F6FBF9;
+    --light-background-item: #ADCECC;
+    --light-theme-color: #000;
+}
+main {
+    height: 100vh;
+}
+a {
     text-decoration: none;
-    color: #000;
+    color: var(--light-theme-color);
 }
 .pointer {
     cursor: pointer;
@@ -28,7 +51,7 @@ a {
 .set-shadow-white {
     color: #fff;
     text-shadow: 0px 0px 3px #000;
-}
+}   
 .negative {
     background-color: red !important;
 }
@@ -36,7 +59,18 @@ a {
 .negative-color {
     color: rgb(196, 88, 88) !important;
 }
+/* Controllers */
+input[type = "submit"] {
+    background-color: #84C7AE;
+    color: #fff;
+}
 
-input {
-    outline: none;
+.active-button {
+    background-color: rgb(30, 96, 211);
+    color: #fff;
+}
+
+.standart-button {
+    background-color: #fff;
+    color: rgb(69, 127, 228);
 }

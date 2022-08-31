@@ -6,6 +6,9 @@ using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 using System;
+using Microsoft.AspNetCore.Authorization;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace KNUStudySystem.Controllers
 {
@@ -20,20 +23,21 @@ namespace KNUStudySystem.Controllers
             _database = database;
         }
 
-        public IActionResult Assignment()
+        public IActionResult Index()
         {
             List<Assignment> assignments = new List<Assignment>();
             using (var connection = _database.getConnectionToDb())
             {
                 connection.Open();
-                _database.setCommand("SELECT * FROM tasks");
-                MySqlCommand command = _database.getExecutableCommand();
+                _database.setCommand("SELECT * FROM Tasks");
+                MySqlCommand command = _database.getExecutableCommand(connection);
                 MySqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
                     Assignment assignment = new Assignment();
-                    assignment.Id = Convert.ToInt32(reader["id"]);
+                    assignment.Id = Convert.ToInt32(reader["task_id"]);
                     assignment.Assignment_Name = Convert.ToString(reader["task_name"]);
+                    assignment.Assignment_Type = Convert.ToString(reader["task_type"]);
                     assignment.Assignment_Description = Convert.ToString(reader["task_description"]);
                     assignment.File_Id = Convert.ToString(reader["file_id"]);
                     assignment.Subject = Convert.ToString(reader["subject"]);

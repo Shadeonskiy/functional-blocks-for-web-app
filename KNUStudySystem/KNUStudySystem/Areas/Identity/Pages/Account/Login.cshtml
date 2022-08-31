@@ -8,20 +8,20 @@
 <link rel="stylesheet" href="~/css/authorization.css" asp-append-version="true" />
 
 <main class="set-center">
+    <div class="login__item-background"></div>
+    <div class="login__item-background"></div>
     <div class="login">
         <form id="account" method="post">
             <h2 class = "login__namer">@ViewData["Title"]</h2>
+            <p class="set-center login__underheadline">Ви за крок до мети</p>
             <div class="wrapper set-center">
-                <input class="login__field" asp-for="Input.Email" value="" aria-labelledby="placeholder"/>
-                <label id="placeholder" class = "placeholder-input" asp-for="Input.Email">
-                    <div class="placeholder-input-text">Your Email</div>
-                </label>
+                <input class="login__field" asp-for="Input.Email" placeholder="Електронна пошта або логін" />
+            </div>
+            <div class="wrapper login__input-restore pointer">
+                <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
             </div>
             <div class="wrapper set-center">
-                <input class="login__field" asp-for="Input.Password" value="" aria-labelledby="placeholder"/>
-                <label id="placeholder" class = "placeholder-input" asp-for="Input.Password">
-                    <div class="placeholder-input-text">Your Password</div>
-                </label>
+                <input class="login__field" asp-for="Input.Password" value="" placeholder="Пароль"/>
             </div>
             <div class="wrapper set-center">
                 <div class="checkbox">
@@ -33,13 +33,10 @@
             </div>
             <div asp-validation-summary="All" class="text-danger set-center"></div>
             <div class="wrapper set-center">
-                <input class = "set-shadow-white login__field-submit pointer" type="submit" value="Log in" required>
+                <input class = "set-shadow-white login__field-submit pointer" type="submit" value="Увійти">
             </div>
-            <div class="wrapper login__input-restore pointer">
-                <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
-            </div>
-            <div class="wrapper login__input-restore pointer">
-                <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+            <div class="wrapper set-center">
+                <span>Не маєте акаунту?<a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl"> <u>Створіть тут.</u></a></span>
             </div>    
         </form>
     </div>
@@ -77,5 +74,4 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" /> 
-    <script src="~/js/login.js"></script>
 }

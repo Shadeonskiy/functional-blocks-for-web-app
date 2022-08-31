@@ -1,0 +1,101 @@
+﻿@using KNUStudySystem.ViewModels
+@model MarkFilteredViewModel
+<link rel="stylesheet" href="~/css/mark.css" asp-append-version="true">
+
+
+@{
+    ViewData["Title"] = "Welcome to 'Marks'";
+}
+
+    <!-- Main -->
+<div class="mark__main borders-margin">
+    <div class="mark__main-filter set-center">
+
+        <div class = "mark__main-headline-container" >
+            <h2 class = "headline">@ViewData["Title"]</h2>
+        </div>
+
+        <div class = "mark__main-filter-container" >
+            <div class="mark__filter-selected"></div>
+            <button class="mark__filter-filter">
+                <img class="mark__filter-icon" src="../../media/filter-filled-tool-symbol.png" />
+            </button>
+            <div class="mark__filter-sortby">
+                <button class="mark__dropdown-button">@Model.SortBy</button>
+                </br>
+                <div class="mark__dropdown-content">
+                    @if (Model.SortBy != "Name")
+                    {
+                        <a asp-controller="Mark" asp-action="Index" asp-route-sortby="Name">Name</a>
+                    }
+                    @if (Model.SortBy != "Grade")
+                    {
+                        <a asp-controller="Mark" asp-action="Index" asp-route-sortby="Grade">Grade</a>
+                    }
+                    @if (Model.SortBy != "Evaluation Date")
+                    {
+                        <a asp-controller="Mark" asp-action="Index"
+                       asp-route-sortby="Evaluation Date">Evaluation Date</a>
+                    }
+                </div>
+            </div>
+            <a class="mark__filter-sort" asp-area="" asp-controller="Mark" asp-action="Index"
+               asp-route-sortby="@Model.SortBy" asp-route-ascending="@(!(Model.Ascending))">
+                @{
+                    if (Model.Ascending)
+                    {
+                            <img style="width: 30px" src="../../media/sorting-order-ascending.png" />
+                    }
+                    else
+                    {
+                            <img style="width: 30px" src="../../media/sorting-order.png" />
+                    }
+                }
+            </a>
+            <button class="mark__filter-rowshow">
+                <img class="mark__filter-icon" src="../../media/list.png" />
+            </button>
+            <button class="mark__filter-cardshow">
+                <img class="mark__filter-icon" src="../../media/menu.png" />
+            </button>
+            <form asp-controller="Mark" asp-action="Index"
+                  asp-route-sortby="@Model.SortBy" asp-route-ascending="@(Model.Ascending)" method="post">
+                <div class="mark__filter-search">
+                    <input name="filters" class="mark__filter-input">
+                    <button class="mark__filter-cardshow pointer" type="submit">
+                        <img style="height: 25px; margin: 0px 3px" src="../../media/magnifying-glass.png" />
+                    </button>
+                </div>
+            </form>
+            </div>
+        </div>
+
+    <div class="mark__main-list">
+        <div class="mark__list-row mark__list-namer">
+            <div class="mark__list-type"><p>Тип</p></div>
+            <div class="mark__list-subject">Предмет</div>
+            <div class="mark__list-name">Назва роботи</div>
+            <div class="mark__list-mark-name">Оцінки</div>
+            <div class="mark__list-teacher">Вчитель</div>
+            <div class="mark__list-date-evaluate">Дата</div>
+            <div class="mark__list-status">Статус</div>
+        </div>
+        @foreach(var item in Model.Marks)
+        {
+            <div class="mark__list-row mark__list-items">
+                <div class="mark__list-type">@item.TaskType</div>
+                <div class="mark__list-subject">@item.Subject</div>
+                <div class="mark__list-name">@item.TaskName</div>
+                <div class="mark__list-mark">@item.Grade</div>
+                <div class="mark__list-comment">
+                    <i class="fa-solid fa-message"></i>
+                </div>
+                <div class="mark__list-teacher">@item.Teacher</div>
+                <div class="mark__list-date-evaluate">@item.EvaluationDate</div>
+                <div class="mark__list-status">@item.Status</div>
+            </div>
+            
+        }
+    </div>
+</div>
+<script src="~/js/site.js"></script>

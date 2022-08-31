@@ -32,7 +32,7 @@ namespace KNUStudySystem.Models
                 _database.setCommand("INSERT INTO StudentInfo " +
                     "(UserId, UserName, Department, Faculty, Specialty, Course, Group, SubGroup, FreeGrouping) " +
                     "VALUES (@UserId, @UserName, @Department, @Faculty, @Specialty, @Course, @Group, @SubGroup, @FreeGrouping)");
-                MySqlCommand command = _database.getExecutableCommand();
+                MySqlCommand command = _database.getExecutableCommand(connection);
                 MySqlParameter[] parameters = {
                     new MySqlParameter("@UserId", UserId),
                     new MySqlParameter("@UserName", UserName),
@@ -59,7 +59,7 @@ namespace KNUStudySystem.Models
             {
                 connection.Open();
                 _database.setCommand("DELETE FROM StudentInfo WHERE UserId = @UserId");
-                MySqlCommand command = _database.getExecutableCommand();
+                MySqlCommand command = _database.getExecutableCommand(connection);
                 command.Parameters.Add(new MySqlParameter("@UserId", UserId));
                 command.ExecuteNonQuery();
                 connection.Close();
@@ -71,7 +71,7 @@ namespace KNUStudySystem.Models
             {
                 connection.Open();
                 _database.setCommand("SELECT * FROM StudentInfo WHERE UserId = @UserId");
-                MySqlCommand command = _database.getExecutableCommand();
+                MySqlCommand command = _database.getExecutableCommand(connection);
                 command.Parameters.Add(new MySqlParameter("@UserId", UserId));
                 MySqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
@@ -110,7 +110,7 @@ namespace KNUStudySystem.Models
                 _database.setCommand("INSERT INTO TeacherInfo " +
                     "(UserId, UserName, Department, Faculty, Specialty) " +
                     "VALUES (@UserId, @UserName, @Department, @Faculty, @Specialty)");
-                MySqlCommand command = _database.getExecutableCommand();
+                MySqlCommand command = _database.getExecutableCommand(connection);
                 MySqlParameter[] parameters = {
                     new MySqlParameter("@UserId", UserId),
                     new MySqlParameter("@UserName", UserName),
@@ -132,7 +132,7 @@ namespace KNUStudySystem.Models
             {
                 connection.Open();
                 _database.setCommand("DELETE FROM TeacherInfo WHERE UserId = @UserId");
-                MySqlCommand command = _database.getExecutableCommand();
+                MySqlCommand command = _database.getExecutableCommand(connection);
                 command.Parameters.Add(new MySqlParameter("@UserId", UserId));
                 command.ExecuteNonQuery();
                 connection.Close();
@@ -144,7 +144,7 @@ namespace KNUStudySystem.Models
             {
                 connection.Open();
                 _database.setCommand("SELECT * FROM TeacherInfo WHERE UserId = @UserId");
-                MySqlCommand command = _database.getExecutableCommand();
+                MySqlCommand command = _database.getExecutableCommand(connection);
                 command.Parameters.Add(new MySqlParameter("@UserId", UserId));
                 MySqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())

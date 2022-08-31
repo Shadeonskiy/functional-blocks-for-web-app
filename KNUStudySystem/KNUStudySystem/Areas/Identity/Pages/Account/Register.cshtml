@@ -1,41 +1,32 @@
 ﻿@page
 @model RegisterModel
 
+@{
+    ViewData["Title"] = "Registration";
+}
+
 <link rel="stylesheet" href="~/css/authorization.css" asp-append-version="true" />
 
 <main class="set-center">
+    <div class="login__item-background"></div>
+    <div class="login__item-background"></div>
     <div class="register">
         <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h2 class = "login__namer">Registration</h2>
+            <h2 class = "login__namer">@ViewData["Title"]</h2>
             <div class="wrapper set-center">  
-                <input class="login__field" asp-for="Input.FirstName" value="" aria-labelledby="placeholder"/>
-                <label id="placeholder" class = "placeholder-input" asp-for="Input.FirstName">
-                    <div class="placeholder-input-text">Your FirstName</div>
-                </label> 
+                <input class="login__field" asp-for="Input.FirstName" placeholder="Введіть ім'я"/>
             </div>  
             <div class="wrapper set-center">  
-                <input class="login__field" asp-for="Input.LastName" value="" aria-labelledby="placeholder"/>
-                <label id="placeholder" class = "placeholder-input" asp-for="Input.LastName">
-                    <div class="placeholder-input-text">Your LastName</div>
-                </label>
+                <input class="login__field" asp-for="Input.LastName" placeholder="Введіть прізвище" />
             </div>  
             <div class="wrapper set-center">
-                <input class="login__field" asp-for="Input.Email" value="" aria-labelledby="placeholder"/>
-                <label id="placeholder" class = "placeholder-input" asp-for="Input.Email">
-                    <div class="placeholder-input-text">Your Email</div>
-                </label>
+                <input class="login__field" asp-for="Input.Email" value="" placeholder="Введіть свою пошту" />
             </div>
             <div class="wrapper set-center">
-                <input class="login__field" asp-for="Input.Password" value="" aria-labelledby="placeholder"/>
-                <label id="placeholder" class = "placeholder-input" asp-for="Input.Password">
-                    <div class="placeholder-input-text">Your Password</div>
-                </label>
+                <input class="login__field" asp-for="Input.Password" value="" placeholder="Введіть свій пароль" />
             </div>
             <div class="wrapper set-center">
-                <input class="login__field" asp-for="Input.ConfirmPassword" value="" aria-labelledby="placeholder"/>
-                <label id="placeholder" class = "placeholder-input" asp-for="Input.ConfirmPassword">
-                    <div class="placeholder-input-text">Confirm your Password</div>
-                </label>
+                <input class="login__field" asp-for="Input.ConfirmPassword" value="" placeholder="Підтвердіть пароль" />
             </div>
             <div class="wrapper set-center">
                 <input class = "set-shadow-white register__field-submit pointer" type="submit" value="Sign up" required>
@@ -77,5 +68,4 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
-    <script src="~/js/login.js"></script>
 }

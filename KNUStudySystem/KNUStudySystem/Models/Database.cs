@@ -5,11 +5,11 @@ namespace KNUStudySystem.Models
 {
     public class Database
     {
-        public MySqlConnection Connection { private get; set; }
+        public string Connection { private get; set; }
         public string Command { get; set; }
         public Database(string ConnectionString)
         {
-            Connection = new MySqlConnection(ConnectionString);
+            Connection = ConnectionString;
         }
         public void setCommand(string command_to_execute)
         {
@@ -17,11 +17,11 @@ namespace KNUStudySystem.Models
         }
         public MySqlConnection getConnectionToDb()
         {
-            return Connection;
+            return new MySqlConnection(Connection);
         }
-        public MySqlCommand getExecutableCommand()
+        public MySqlCommand getExecutableCommand(MySqlConnection connection)
         {
-            return new MySqlCommand(Command, Connection);
+            return new MySqlCommand(Command, connection);
         }
     }
 }
