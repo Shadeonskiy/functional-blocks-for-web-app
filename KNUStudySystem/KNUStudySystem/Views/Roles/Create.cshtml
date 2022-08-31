@@ -1,12 +1,16 @@
-﻿<link rel="stylesheet" href="~/css/admin.css" />
+﻿@model string
 
-@model string
+@{
+    ViewData["Title"] = "Додавання нової ролі";
+}
+
+<link rel="stylesheet" href="~/css/admin.css" />
 
  <div class="wrapper">
     <div asp-validation-summary="All" class="text-danger"></div>
     <div class="admin__wrapper  set-center">
         <div class="admin__headline">
-            <h2>Додавання нової ролі</h2>
+            <h2>@ViewData["Title"]</h2>
             <div class="admin__container admin__button-container">
                 <div class="admin__button">
                     <form onClick="history.go(-1); return false;">

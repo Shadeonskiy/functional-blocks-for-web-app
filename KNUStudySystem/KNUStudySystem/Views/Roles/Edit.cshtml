@@ -2,13 +2,17 @@
 @model KNUStudySystem.ViewModels.ChangeRoleViewModel
  
 <link rel="stylesheet" href="~/css/admin.css" />
+
+@{
+    ViewData["Title"] = "Зміна ролей для користувача " + Model.UserName;
+}
  
 <div class="wrapper">
     <div class="admin__wrapper  set-center">
         <form asp-action="Edit" method="post">
         <div class="admin__list">
             <div class="admin__container">
-                <h3>Зміна ролей для користувача @Model.UserName</h3>
+                <h3>@ViewData["Title"]</h3>
                 <input type="hidden" name="userId" value="@Model.UserId" />
                 @foreach (IdentityRole role in Model.AllRoles)
                 {

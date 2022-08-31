@@ -1,0 +1,51 @@
+﻿@using System.Globalization
+@model List<Assignment>
+@{
+    string getTimeLeft(DateTime deadline)
+    {
+        DateTime current_time = DateTime.Now;
+        TimeSpan time_diff = deadline - current_time;
+
+        if (time_diff.Days > 0)
+        {
+            return(Convert.ToString(time_diff.Days) + " Days left");
+        }
+        else if (time_diff.Hours > 0)
+        {
+            return (Convert.ToString(time_diff.Hours) + " Hours left");
+        }
+        else if (time_diff.Minutes > 0)
+        {
+            return (Convert.ToString(time_diff.Minutes) + " Minutes left");
+        }
+        else if (time_diff.TotalSeconds > 0)
+        {
+            return("Less than one minute");
+        }
+        return("Time passed");
+    }
+}
+    <!-- Main-->
+<link rel="stylesheet" href="~/css/tasks.css" asp-append-version="true">
+<div class="task__container-row">
+    @foreach(var item in Model)
+    {
+        CultureInfo ci = new CultureInfo("en-US");
+        <div class="task__element">
+             <div class="set-flex task__head-part">
+                <p class="task__date">@item.Assignment_Date.ToString("MMMM", ci) @item.Assignment_Date.Day, @item.Assignment_Date.Year</p>
+                <div class="task__status"></div>
+            </div>
+            <div class="task__wrapper set-center">
+                <div>
+                    <p class="task__headline set-center">@item.Assignment_Name</p>
+                    <h4 class = "set-center task__underheadline">@item.Subject</h4>
+                </div>
+            </div>
+            <div class="set-flex task__foot-part">
+                <p class="task__type">@item.Assignment_Type</p>
+                <p class="task__days-left" align = right>@getTimeLeft(item.Deadline)</p>
+            </div>
+        </div>
+    }
+</div>

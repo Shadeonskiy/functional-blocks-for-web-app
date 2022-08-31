@@ -1,0 +1,101 @@
+body {
+    background-color: var(--light-back);
+    color: var(--light-theme-color);
+}
+.materials__main {
+    width: 1030px;
+}
+.materials__row {
+    width: 100%;
+}
+.materials__header {
+    margin: 15px 0px;
+}
+.materials__row-item {
+    width: calc((100% - 60px) / 4);
+    margin: 0px 30px;
+    padding: 10px 0px;
+    text-align: center;
+    background-color: var(--light-background-item);
+}
+.materials__table-item {
+    background-color: var(--light-form-back);
+    padding: 15px;
+    margin: 15px 30px;
+    font-size: 14px;
+}
+.materials__type {
+    width: 35px;
+    border: 1px solid #000;
+    height: 35px;
+    background-color: aliceblue;
+}
+.undername {
+    font-size: 12px;
+}
+.materials__table-item > div:not(:first-child,:last-child) {
+    padding: 0px 10px;
+}
+.materials__name {
+    width: 250px;
+}  
+.materials__subject {
+    width: 70px;
+}
+.materials__teacher {
+    width: 80px;
+}
+.materials__date {
+    width: 145px;
+}
+.materials__file-size {
+    width: 100px;
+}
+.materials__column {
+    width: 330px;
+    height: 100%;
+    margin: 0px 30px 0px 0px;
+}
+.materials__column-namer {
+     background-color: var(--light-background-item);
+     padding: 13px 0px;
+     max-height: 40px;
+     margin: 5px 0px;
+     text-align: center;
+     width: 100%;
+}
+.materials__columnn-container {
+    display: flex;
+    width: 100%;
+}
+.materials__columnn-container :first-child {
+    margin: 5px 5px 5px 0px;
+}
+.materials__columnn-container :last-child {
+    margin: 5px 0px 5px 5px;
+}
+.materials__container-item {
+    padding: 10px 0px;
+    margin: 5px 0px;
+    background-color: var(--light-form-back);
+    width: 50%;
+    text-align: center;
+    text-transform: uppercase;
+}
+.materials__recent-item{ 
+    background-color: var(--light-form-back);
+    margin: 5px 0px;
+    padding: 5px 0px;
+}
+.materials__recent-item  > .materials__type {
+    margin: 0px 10px;
+}
+
+.materials__recent-item  > .materials__row {
+    width: calc(100% - 45px);   
+}
+.materials__column input {
+    width: calc(100% - 20px);
+    border: none;
+    padding: 10px;
+}
