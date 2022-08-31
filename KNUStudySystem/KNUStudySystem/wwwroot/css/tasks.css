@@ -1,75 +1,74 @@
-main {
-    background-color: var(--light-back);
-    color: var(--light-theme-color);
-}
-
-:root {
-    --completed: #34A853;
-    --process: #FBBC05;
-    --deadline: #EA4335;
-}
-
-.task__container-row {
+.task__container-row { 
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-
-.task__element {
-    width: 230px;
-    height: 140px;
-    padding: 10px 20px;
-    margin: 20px;
-    box-shadow: 0px 3px 3px #000;
-    border-radius: 20px;
-    background-color: var(--light-form-back);
+.task__element{
+    width: 250px;
+    height: 170px;
+    margin: 10px 10px;
+    border-radius: 30px;
+    background-color: lightgreen;
 }
-
 .headline {
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 3px;
 }
-
 .task__main-filter {
     margin: 50px 0px;
 }
-
 .task__main-headline-container {
     width: 40%;
 }
-
 .task__main-filter-container {
     width: 60%;
     display: flex;
     justify-content: flex-end;
 }
-
-    .task__main-filter-container > div {
-        margin: 0px 20px;
-    }
-
-.task__date, .task__days-left {
-    width: 100%;
+.task__main-filter-container > div {
+    margin : 0px 20px;
 }
-
-.task__status {
-    width: 60px;
-    height: 20px;
-    border-radius: 40px;
-    background-color: var(--completed);
+.task__date {
+    color: gray;
+    font-weight: 200;
+    font-size: 14px;
+    padding: 20px 15px;
 }
 
 .task__headline {
-    font-size: 24px;
-    font-weight: lighter;
+    font-size: 18px;
 }
 
-.task__wrapper {
-    height: 70px;
-    padding: 15px 0px;
+.task__detailed {
+    color: gray;
+    padding: 5px;
+    font-size: 14px;
 }
 
-.task__head-part, .task__foot-part {
-    height: 20px;
+.task__progress-bar {
+    width: calc(100% - 40px);
+    height: 4px;
+    margin: 10px 10px;
+    background-color: #fff;
+}
+
+.progress {
+    background-color: red;
+    height: 100%;
+    width: 50%;
+}
+
+.task__progress {
+    margin: 0px 10px;
+    font-weight: bold;
+}
+
+.task__days-left {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.task__days-timer {
+    margin: 0px 30px;
 }

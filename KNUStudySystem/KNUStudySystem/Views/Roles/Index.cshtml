@@ -2,14 +2,10 @@
 
 <link rel="stylesheet" href="~/css/admin.css" />
 
-@{
-    ViewData["Title"] = "Перелік ролей";
-}
-
 <div class="wrapper">
     <div class="admin__wrapper set-center">
         <div class="admin__headline">
-            <h2>@ViewData["Title"]</h2>
+            <h2>Перелік ролей</h2>
             <div class="admin__container admin__button-container">
                 <div class="admin__button">
                     <form onClick="history.go(-1); return false;">
@@ -24,7 +20,7 @@
         <div class="admin__list">
             <div class="admin__container set-flex">
                 <div class="admin__mail-item">ID</div>
-                <div class="admin__mail-item">Назва</div>
+                <div class="admin__mail-item">Name</div>
             </div>
             @foreach (var role in Model)
             {

@@ -1,5 +1,5 @@
 button {
-    background: none;
+    background-color: white;
     border: none;
 }
 
@@ -89,7 +89,6 @@ button {
 }
 
 .mark__filter-input {
-    background: none;
     border: none;
     height: 30px;
     margin-left: 3px;
@@ -107,37 +106,16 @@ button {
 }
 
 .mark__list-row {
+    border-bottom: 1px solid gray;
     display: flex;
     padding: 15px 0px;
     align-items: center;
 }
 
 .mark__list-namer {
+    color: gray;
     padding: 15px 0px;
-    font-weight: 300;
-}
-
-.mark__list-namer > div {
-    background-color: var(--light-background-item);
-    margin: 0px 10px;
-    padding: 10px;
-}
-
-.mark__list-items > div:not(.mark__item-wrapper) {
-    background-color: var(--light-form-back);
-    margin: 0px 10px;
-    padding: 10px;
-}
-
-.mark__list-row > div {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.mark__list-mark-name {
-    width: 10%;
+    font-weight: lighter;
 }
 
 .mark__list-type, .mark__list-subject, .mark__list-name, .mark__list-mark, .mark__list-teacher, .mark__list-date-evaluate, .mark__list-status {
@@ -170,7 +148,4 @@ button {
 
 .evaluating {
     color: blue;
-}
-.mark__list-mark, .mark__list-comment {
-    width: calc(5% - 25px);
 }

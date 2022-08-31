@@ -63,7 +63,7 @@ namespace KNUStudySystem.Controllers
             return marks;
         }
 
-        public IActionResult Index(bool ascending, string sortBy = null, /*List<Filter> filters*/string filters = null  )
+        public IActionResult Mark(bool ascending, string sortBy, /*List<Filter> filters*/string filters)
         {
             MarkFilteredViewModel MarksView = new MarkFilteredViewModel();
 

@@ -24,12 +24,9 @@ body {
     --light-background-item: #ADCECC;
     --light-theme-color: #000;
 }
-main {
-    height: 100vh;
-}
-a {
+a { 
     text-decoration: none;
-    color: var(--light-theme-color);
+    color: #000;
 }
 .pointer {
     cursor: pointer;

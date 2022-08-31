@@ -1,7 +1,7 @@
-﻿@using KNUStudySystem.ViewModels
+@using KNUStudySystem.ViewModels
 @model MarkFilteredViewModel
-<link rel="stylesheet" href="~/css/mark.css" asp-append-version="true">
 
+<link rel="stylesheet" href="~/css/mark.css" asp-append-version="true">
 
 @{
     ViewData["Title"] = "Welcome to 'Marks'";
@@ -26,20 +26,20 @@
                 <div class="mark__dropdown-content">
                     @if (Model.SortBy != "Name")
                     {
-                        <a asp-controller="Mark" asp-action="Index" asp-route-sortby="Name">Name</a>
+                        <a asp-controller="Mark" asp-action="Mark" asp-route-sortby="Name">Name</a>
                     }
                     @if (Model.SortBy != "Grade")
                     {
-                        <a asp-controller="Mark" asp-action="Index" asp-route-sortby="Grade">Grade</a>
+                        <a asp-controller="Mark" asp-action="Mark" asp-route-sortby="Grade">Grade</a>
                     }
                     @if (Model.SortBy != "Evaluation Date")
                     {
-                        <a asp-controller="Mark" asp-action="Index"
+                        <a asp-controller="Mark" asp-action="Mark"
                        asp-route-sortby="Evaluation Date">Evaluation Date</a>
                     }
                 </div>
             </div>
-            <a class="mark__filter-sort" asp-area="" asp-controller="Mark" asp-action="Index"
+            <a class="mark__filter-sort" asp-area="" asp-controller="Mark" asp-action="Mark"
                asp-route-sortby="@Model.SortBy" asp-route-ascending="@(!(Model.Ascending))">
                 @{
                     if (Model.Ascending)
@@ -58,11 +58,11 @@
             <button class="mark__filter-cardshow">
                 <img class="mark__filter-icon" src="../../media/menu.png" />
             </button>
-            <form asp-controller="Mark" asp-action="Index"
+            <form asp-controller="Mark" asp-action="Mark"
                   asp-route-sortby="@Model.SortBy" asp-route-ascending="@(Model.Ascending)" method="post">
                 <div class="mark__filter-search">
                     <input name="filters" class="mark__filter-input">
-                    <button class="mark__filter-cardshow pointer" type="submit">
+                    <button class="mark__filter-cardshow" type="submit">
                         <img style="height: 25px; margin: 0px 3px" src="../../media/magnifying-glass.png" />
                     </button>
                 </div>
@@ -72,24 +72,21 @@
 
     <div class="mark__main-list">
         <div class="mark__list-row mark__list-namer">
-            <div class="mark__list-type"><p>Тип</p></div>
-            <div class="mark__list-subject">Предмет</div>
-            <div class="mark__list-name">Назва роботи</div>
-            <div class="mark__list-mark-name">Оцінки</div>
-            <div class="mark__list-teacher">Вчитель</div>
-            <div class="mark__list-date-evaluate">Дата</div>
-            <div class="mark__list-status">Статус</div>
+            <div class="mark__list-type">Type</div>
+            <div class="mark__list-subject">Subject</div>
+            <div class="mark__list-name">Name</div>
+            <div class="mark__list-mark">Mark</div>
+            <div class="mark__list-teacher">Teacher</div>
+            <div class="mark__list-date-evaluate">Evaluation Date</div>
+            <div class="mark__list-status">Status</div>
         </div>
         @foreach(var item in Model.Marks)
         {
-            <div class="mark__list-row mark__list-items">
+            <div class="mark__list-row">
                 <div class="mark__list-type">@item.TaskType</div>
                 <div class="mark__list-subject">@item.Subject</div>
                 <div class="mark__list-name">@item.TaskName</div>
                 <div class="mark__list-mark">@item.Grade</div>
-                <div class="mark__list-comment">
-                    <i class="fa-solid fa-message"></i>
-                </div>
                 <div class="mark__list-teacher">@item.Teacher</div>
                 <div class="mark__list-date-evaluate">@item.EvaluationDate</div>
                 <div class="mark__list-status">@item.Status</div>

@@ -169,6 +169,8 @@ F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\obj\Debug\netcoreapp
 F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\obj\Debug\netcoreapp3.1\Razor\Views\Assignment\Assignment.cshtml.g.cs
+F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\obj\Debug\netcoreapp3.1\Razor\Views\Mark\Mark.cshtml.g.cs
 F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\obj\Debug\netcoreapp3.1\Razor\Views\Roles\Create.cshtml.g.cs
 F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\obj\Debug\netcoreapp3.1\Razor\Views\Roles\Edit.cshtml.g.cs
 F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\obj\Debug\netcoreapp3.1\Razor\Views\Roles\Index.cshtml.g.cs
@@ -186,6 +188,3 @@ F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\obj\Debug\netcoreapp
 F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResetPassword.cshtml.g.cs
 F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ConfirmEmail.cshtml.g.cs
 F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Lockout.cshtml.g.cs
-F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\obj\Debug\netcoreapp3.1\Razor\Views\Assignment\Index.cshtml.g.cs
-F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\obj\Debug\netcoreapp3.1\Razor\Views\Mark\Index.cshtml.g.cs
-F:\КНУ\KnuStudySystemFiles\KNUStudySystem\KNUStudySystem\obj\Debug\netcoreapp3.1\Razor\Views\Materials\Index.cshtml.g.cs

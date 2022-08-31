@@ -6,9 +6,6 @@ using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 using System;
-using Microsoft.AspNetCore.Authorization;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace KNUStudySystem.Controllers
 {
@@ -23,7 +20,7 @@ namespace KNUStudySystem.Controllers
             _database = database;
         }
 
-        public IActionResult Index()
+        public IActionResult Assignment()
         {
             List<Assignment> assignments = new List<Assignment>();
             using (var connection = _database.getConnectionToDb())
