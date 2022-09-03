@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PQbdV/qqkf0okVZKE5srvsUB2as+deJxxUl1Fl5/kPaUleJZpNLd5zoDkrEK7SPwWna3pMcMkBIFTx1MWCDP/Q==",
+  "dgSpecHash": "ddE7R+d8/WlLIQ4aSzYUAWPxsy9GWPZL4LtVjzo0cdW/4PfcNOhNJckbNP6kwyTagEYZPp1WfrLoyhJpsq//Bg==",
   "success": true,
-  "projectFilePath": "F:\\КНУ\\KnuStudySystemFiles\\KNUStudySystem\\KNUStudySystem\\KNUStudySystem.csproj",
+  "projectFilePath": "F:\\КНУ\\Проектна робота\\KnuStudySystemFiles\\KNUStudySystem\\KNUStudySystem\\KNUStudySystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Влад\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.25\\microsoft.aspnetcore.cryptography.internal.3.1.25.nupkg.sha512",
     "C:\\Users\\Влад\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.25\\microsoft.aspnetcore.cryptography.keyderivation.3.1.25.nupkg.sha512",

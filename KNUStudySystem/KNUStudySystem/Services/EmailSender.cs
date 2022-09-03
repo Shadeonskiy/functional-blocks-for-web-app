@@ -29,9 +29,11 @@ namespace KNUStudySystem.Services
             }
             await Execute(Options.SendGridKey, subject, message, toEmail);
         }
-        
+
         public async Task Execute(string apiKey, string subject, string message, string toEmail)
         {
+            string name = message.Split(" ")[0];
+            string url = message.Split(" ")[1];
             var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage()
             {
@@ -40,6 +42,14 @@ namespace KNUStudySystem.Services
                 PlainTextContent = message,
                 HtmlContent = message
             };
+            msg.SetTemplateId(Options.TemplateId);
+            msg.SetTemplateData(new
+            {
+                subject = subject,
+                name = name,
+                url = url
+
+            });
             msg.AddTo(new EmailAddress(toEmail));
 
             // Disable click tracking.
