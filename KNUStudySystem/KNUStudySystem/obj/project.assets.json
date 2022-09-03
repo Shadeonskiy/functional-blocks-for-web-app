@@ -9327,11 +9327,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\КНУ\\KnuStudySystemFiles\\KNUStudySystem\\KNUStudySystem\\KNUStudySystem.csproj",
+      "projectUniqueName": "F:\\КНУ\\Проектна робота\\KnuStudySystemFiles\\KNUStudySystem\\KNUStudySystem\\KNUStudySystem.csproj",
       "projectName": "KNUStudySystem",
-      "projectPath": "F:\\КНУ\\KnuStudySystemFiles\\KNUStudySystem\\KNUStudySystem\\KNUStudySystem.csproj",
+      "projectPath": "F:\\КНУ\\Проектна робота\\KnuStudySystemFiles\\KNUStudySystem\\KNUStudySystem\\KNUStudySystem.csproj",
       "packagesPath": "C:\\Users\\Влад\\.nuget\\packages\\",
-      "outputPath": "F:\\КНУ\\KnuStudySystemFiles\\KNUStudySystem\\KNUStudySystem\\obj\\",
+      "outputPath": "F:\\КНУ\\Проектна робота\\KnuStudySystemFiles\\KNUStudySystem\\KNUStudySystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "D:\\NuGet\\NuGet.Config",

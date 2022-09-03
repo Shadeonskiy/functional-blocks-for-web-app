@@ -10,40 +10,43 @@ namespace KNUStudySystem.Models
     {
         public string UserId { get; set; }
         public string UserName { get; set; }
-        public string? Department { get; set; } = null;
-        public string? Faculty { get; set; } = null;
-        public string? Specialty{ get; set; } = null;
+        public string? Department { get; set; }
+        public string? Faculty { get; set; }
+        public string? Specialty{ get; set; }
         public abstract void AddInfoToDb(Database database);
         public abstract void DeleteInfoFromDb(Database database);
         public abstract void GetInfoFromDb(Database database);
     }
     public class Student : User
     {
-        public int? Course { get; set; } = null;
-        public int? Group { get; set; } = null;
-        public int? SubGroup { get; set; } = null;
-        public string? FreeGrouping { get; set; } = null;
+        public int? Course { get; set; }
+        public int? Group { get; set; }
+        public int? SubGroup { get; set; }
+        public string? FreeGrouping { get; set; }
 
         public override void AddInfoToDb(Database _database)
         {
             using (var connection = _database.getConnectionToDb())
             {
                 connection.Open();
-                _database.setCommand("INSERT INTO StudentInfo " +
+                /*_database.setCommand("INSERT INTO StudentInfo " +
                     "(UserId, UserName, Department, Faculty, Specialty, Course, Group, SubGroup, FreeGrouping) " +
-                    "VALUES (@UserId, @UserName, @Department, @Faculty, @Specialty, @Course, @Group, @SubGroup, @FreeGrouping)");
+                    "VALUES (@UserId, @UserName, @Department, @Faculty, @Specialty, @Course, @Group, @SubGroup, @FreeGrouping)");*/
+                _database.setCommand("INSERT INTO StudentInfo " +
+                    "(UserId, UserName) " +
+                    "VALUES (@UserId, @UserName)");
                 MySqlCommand command = _database.getExecutableCommand(connection);
                 MySqlParameter[] parameters = {
                     new MySqlParameter("@UserId", UserId),
                     new MySqlParameter("@UserName", UserName),
-                    new MySqlParameter("@Department", Department),
+                    /*new MySqlParameter("@Department", Department),
                     new MySqlParameter("@Faculty", Faculty),
                     new MySqlParameter("@Specialty", Specialty),
                     new MySqlParameter("@Course", Course),
                     new MySqlParameter("@Group", Group),
                     new MySqlParameter("@SubGroup", SubGroup),
-                    new MySqlParameter("@FreeGrouping", FreeGrouping)
-                    
+                    new MySqlParameter("@FreeGrouping", FreeGrouping)*/
+
                 };
                 foreach (var parameter in parameters)
                 {
@@ -78,13 +81,13 @@ namespace KNUStudySystem.Models
                 {
                     UserId = Convert.ToString(reader["UserId"]);
                     UserName= Convert.ToString(reader["UserName"]);
-                    Department = Convert.ToString(reader["Department"]);
+                    /*Department = Convert.ToString(reader["Department"]);
                     Faculty = Convert.ToString(reader["Faculty"]);
                     Specialty = Convert.ToString(reader["Specialty"]);
                     Course = Convert.ToInt32(reader["Course"]);
                     Group = Convert.ToInt32(reader["Group"]);
                     SubGroup = Convert.ToInt32(reader["SubGroup"]);
-                    FreeGrouping = Convert.ToString(reader["FreeGrouping"]);
+                    FreeGrouping = Convert.ToString(reader["FreeGrouping"]);*/
                 }
                 reader.Close();
                 connection.Close();
